@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<Pane fx:id="background" prefHeight="836.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+
+
+        <ImageView fx:id="chest" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="192.0" y="320.0">
+            <image>
+                <Image url="@../image/chest.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="-128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall2" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall3" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="0.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall4" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall5" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-64.0" y="-128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall6" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-64.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall7" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="0.0" y="-128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall8" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="0.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall9" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="64.0" y="-128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall10" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="64.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall11" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="128.0" y="-128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall12" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="128.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall13" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="128.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall14" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="128.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall15" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="192.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall16" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="192.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall17" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall18" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall19" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="320.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall20" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="320.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall21" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="384.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall22" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="384.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall23" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="448.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall24" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall25" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="-64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall26" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="0.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall27" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="64.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall28" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="192.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall30" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall29" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="192.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall31" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="320.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall32" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="384.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall33" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="128.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall34" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="320.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall35" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="256.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall36" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="192.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall37" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="384.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall38" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="448.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall39" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="512.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall40" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="256.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall41" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="320.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall42" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="384.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall43" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="448.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall44" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-128.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall45" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="-64.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall46" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall47" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="64.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall48" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="128.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall49" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="448.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall50" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="384.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall51" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="320.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall52" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall53" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall54" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall55" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall56" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall57" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall58" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall59" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall60" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall61" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall62" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall63" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall64" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall65" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall66" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall67" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall68" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall69" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall70" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall71" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall72" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall73" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall74" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall75" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall76" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall77" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall78" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall79" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall80" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall81" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall82" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall83" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall84" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall85" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall86" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall87" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall88" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall89" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall90" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall91" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall92" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall93" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall94" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall95" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall96" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall97" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall98" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall99" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall100" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall101" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall102" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall103" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall104" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall105" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall106" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall107" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall108" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall109" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall110" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall111" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall112" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall113" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall114" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall115" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall116" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall117" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall118" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall119" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall120" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="wall121" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" x="256.0" y="512.0">
+            <image>
+                <Image url="@../image/dungeonwall.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="controlls" fitHeight="193.0" fitWidth="245.0" layoutX="104.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/controlls.gif" />
+            </image>
+        </ImageView>
+
+        <GridPane layoutX="64.0" layoutY="65.0" prefHeight="193.0" prefWidth="198.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="64.0" prefWidth="64.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="64.0" prefWidth="64.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="64.0" prefWidth="64.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="64.0" minHeight="64.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="64.0" minHeight="64.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="64.0" minHeight="64.0" prefHeight="64.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ImageView fx:id="hero" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../image/Player.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fieldw" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" opacity="0.5" pickOnBounds="true" preserveRatio="true" translateZ="1.0" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../image/available.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fieldn" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" opacity="0.5" pickOnBounds="true" preserveRatio="true" translateZ="1.0" GridPane.columnIndex="1">
+                    <image>
+                        <Image url="@../image/available.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fieldo" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" opacity="0.5" pickOnBounds="true" preserveRatio="true" translateZ="1.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../image/available.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="fields" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" opacity="0.5" pickOnBounds="true" preserveRatio="true" translateZ="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@../image/available.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="actioncloud" fitHeight="64.0" fitWidth="64.0" opacity="0.59" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../image/actioncloud.gif" />
+                    </image>
+                </ImageView>
+            </children>
+        </GridPane>
+        <ProgressBar fx:id="healthbar" layoutX="133.0" layoutY="724.0" minHeight="8.0" minWidth="393.0" prefHeight="20.0" prefWidth="399.0" progress="1.0" style="-fx-accent: #ab343a; ">
+        </ProgressBar>
+        <ImageView fitHeight="141.0" fitWidth="704.0" pickOnBounds="true" preserveRatio="true" y="704.0">
+            <image>
+                <Image url="@../image/statusbar.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="fearmeter" fitHeight="96.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" x="8.0" y="725.0">
+            <image>
+                <Image url="@../image/fine.gif" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="selection" fitHeight="56.0" fitWidth="56.0" onKeyPressed="#select" pickOnBounds="true" preserveRatio="true" x="115.0" y="760.0">
+            <image>
+                <Image url="@../image/selection.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="lightmeter" fitHeight="96.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" x="604.0" y="724.0">
+            <image>
+                <Image url="@../image/light4.png" />
+            </image>
+        </ImageView>
+      <ImageView fx:id="nrdec" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" x="578.0">
+         <image>
+            <Image url="@../image/0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="nrzif" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" x="640.0">
+         <image>
+            <Image url="@../image/0.png" />
+         </image>
+      </ImageView>
+
+    </children>
+</Pane>

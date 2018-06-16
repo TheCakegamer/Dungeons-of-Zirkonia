@@ -1,0 +1,20 @@
+#background {
+    -fx-background-image: url("../image/dungeonground-1.png");
+    -fx-background-repeat: repeat;
+    -fx-background-size: 64px;
+}
+
+.button {
+    -fx-background-image: url("../image/dungeonground-1-dark.png");
+    -fx-background-repeat: repeat;
+    -fx-background-size: 64px;
+}
+
+.progress-bar {
+    -webkit-fx-background-image: "img/damagebar.png" !important;
+    -moz-fx-background-image: "img/damagebar.png" !important;
+    -ms-fx-background-image: "img/damagebar.png" !important;
+    -o-fx-background-image: "img/damagebar.png" !important;
+    -khtml-fx-background-image: "img/damagebar.png" !important;
+    fx-background-image: "img/damagebar.png" !important;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Menu">
+   <children>
+       <ImageView fitHeight="680.0" fitWidth="1210.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../image/Mainmenu.gif" />
+           </image>
+       </ImageView>
+      <ImageView fitHeight="437.0" fitWidth="662.0" layoutX="377.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/DungeonsOfZirkoniaLogo.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="Start" layoutX="377.0" layoutY="421.0" mnemonicParsing="false" onAction="#startgame" prefHeight="71.0" prefWidth="189.0" text="Start" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font></Button>
+      <Button fx:id="Exit" layoutX="631.0" layoutY="421.0" mnemonicParsing="false" onAction="#closegame" prefHeight="71.0" prefWidth="189.0" text="Exit" textFill="WHITE">
+         <font>
+            <Font size="31.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
