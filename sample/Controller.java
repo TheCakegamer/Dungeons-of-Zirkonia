@@ -863,10 +863,9 @@ public class Controller {
             enemyclass.blob.setX(770);
 
 
-
             if (turn % 5 == 0) {
                 if (!cancelsuck && (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30) && charge != 3) {
-                    if (charge == 0){
+                    if (charge == 0) {
                         bossarmor = 3;
                     }
                     bossclass.boss.setImage(bossclass.suckimg);
@@ -876,9 +875,9 @@ public class Controller {
 
                     bossclass.boss.setImage(bossclass.bossimg);
                     bossclass.bossmove(hero, bossclass.boss, background, wallcollision(walls, bossclass.boss));
-                   if (charge == 0) {
-                       cancelsuck = false;
-                   }
+                    if (charge == 0) {
+                        cancelsuck = false;
+                    }
                 }
                 if (charge == 3 && !cancelsuck) {
                     lightcounter = bossclass.suckattack(lightcounter, bossclass.boss);
@@ -886,33 +885,34 @@ public class Controller {
                     bossclass.boss.setImage(bossclass.bossimg);
                     charge = 0;
                     cancelsuck = false;
-                }else if (cancelsuck){
+                } else if (cancelsuck) {
                     charge = 0;
                 }
             }
             if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") ||
                     fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") ||
                     fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") ||
-                    fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j") ) {
+                    fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j")) {
                 if (bossarmor == 0) {
-                    if (freeslots[selected-1] && bossclass.bosshealth != 0) {
+                    if (freeslots[selected - 1] && bossclass.bosshealth != 0) {
                         bossclass.bosshealth--;
                         cancelsuck = true;
 
-                        if (lightcounter <= 10){
+                        if (lightcounter <= 10) {
                             bossarmor = 2;
-                        }
-                        else {
+                        } else {
                             bossarmor = 1;
                         }
                     }
-                }else{
+                } else {
                     bossarmor--;
                 }
             }
 
 
-
+            if (bossclass.bosshealth == 0) {
+                bossclass.endgame();
+            }
 
 
             for (int i = 0; i < darkness.size(); i++) {
@@ -1098,7 +1098,7 @@ public class Controller {
         }
         predfields(wallcollision(walls, hero), enemies);
 
-        if(roomclass.roomnr == 50){
+        if (roomclass.roomnr == 50) {
             predfieldsboss(wallcollision(walls, hero), bossclass.boss);
         }
 
@@ -1376,7 +1376,6 @@ public class Controller {
             }
         }
     }
-
 
 
     public int[] wallcollision(ArrayList<ImageView> wall, ImageView hero) {

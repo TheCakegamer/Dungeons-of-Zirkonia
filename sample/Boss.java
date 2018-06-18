@@ -1,9 +1,14 @@
 package sample;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Boss {
@@ -38,7 +43,7 @@ public class Boss {
 
     ArrayList<Image> bhealthimg = new ArrayList<>();
 
-    public void initialize(){
+    public void initialize() {
         bhealthimg.add(bossh00);
         bhealthimg.add(bossh01);
         bhealthimg.add(bossh02);
@@ -63,26 +68,38 @@ public class Boss {
     }
 
 
-
-
-    public int suckattack(int lightcounter, ImageView boss){
+    public int suckattack(int lightcounter, ImageView boss) {
         boss.setImage(suckimg);
         lightcounter = 0;
-        if (bosshealth <= 15){
+        if (bosshealth <= 15) {
             bosshealth += 5;
-        }else {
+        } else {
             bosshealth = 20;
         }
 
         return lightcounter;
     }
 
-    public void updatehealthbar(int bosshealth){
+    public void updatehealthbar(int bosshealth) {
         initialize();
         bosshealthbar.setImage(bhealthimg.get(bosshealth));
     }
 
+    public void endgame() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("End.fxml"));
 
+        Parent GO;
+        GO = fxmlLoader.load();
+        GO.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
+        Stage stage = new Stage();
+        stage.getIcons().add(new Image("image/DoZweblogo_HD.png"));
+        stage.setScene(new Scene(GO));
+        Stage gamestage = (Stage) boss.getScene().getWindow();
+
+        stage.show();
+        gamestage.close();
+
+    }
 
 
     public void bossmove(ImageView hero, ImageView enemy, Pane background, int[] availablemovement) {
@@ -105,7 +122,7 @@ public class Boss {
             bosshealthbar.toFront();
             bosshealthbar.setFitWidth(704);
             bosshealthbar.setFitHeight(141);
-            bossspawned= true;
+            bossspawned = true;
         }
 
 

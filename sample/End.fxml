@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.End"
+            prefHeight="680.0" prefWidth="1210.0">
+    <children>
+        <ImageView fitHeight="680.0" fitWidth="1210.0" pickOnBounds="true" preserveRatio="true" fx:id="endingimg"
+                   onMouseClicked="#nextimg">
+            <image>
+                <Image url="@../image/Ed1.gif"/>
+            </image>
+        </ImageView>
+
+
+    </children>
+
+</AnchorPane>
