@@ -31,6 +31,7 @@ public class Controller {
     int fearturn = 0;
     int l = 0;
     int charge = 0;
+    int bossarmor = 1;
 
 
     @FXML
@@ -876,11 +877,27 @@ public class Controller {
                     charge = 0;
                 }
             }
+            if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") ||
+                    fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") ||
+                    fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") ||
+                    fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j") ) {
+                if (bossarmor == 0) {
+                    if (freeslots[selected-1]) {
+                        bossclass.bosshealth--;
+                        bossarmor = 1;
+                    }
+                }else{
+                    bossarmor--;
+                }
+            }
+
+
 
 
 
             for (int i = 0; i < darkness.size(); i++) {
                 darkness.get(i).toFront();
+                bossclass.bosshealthbar.toFront();
             }
 
             if (turn % 50 == 0) {
@@ -902,6 +919,9 @@ public class Controller {
                     health = enemyclass.hurt(healthbar, health, 5);
                 }
             }
+
+            bossclass.updatehealthbar(bossclass.bosshealth);
+
         }
 
 
