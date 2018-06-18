@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 public class Menu {
 
 
-
     @FXML
     Button Start;
     @FXML
@@ -28,7 +27,7 @@ public class Menu {
 
     public void startgame(ActionEvent actionEvent) throws Exception {
 
-        Stage menustage =(Stage) Exit.getScene().getWindow();
+        Stage menustage = (Stage) Exit.getScene().getWindow();
 
         Stage primaryStage = new Stage();
         main.root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -38,9 +37,7 @@ public class Menu {
         main.root.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
 
 
-
         primaryStage.show();
-
 
 
         menustage.close();

@@ -823,7 +823,7 @@ public class Controller {
 
         roomclass.changeroom(hero, walls, roomORX, roomORY, background, controlls);
 
-        if (roomclass.roomnr <= 49) {
+        if (roomclass.roomnr < 50) {
             if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth == 4) {
 
                 turn++;
@@ -860,6 +860,8 @@ public class Controller {
             enemyclass.slime.setX(770);
             enemyclass.blob.setX(770);
 
+
+
             if (turn % 5 == 0) {
                 if (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30 && charge != 3) {
                     bossclass.boss.setImage(bossclass.suckimg);
@@ -876,6 +878,7 @@ public class Controller {
             }
 
 
+
             for (int i = 0; i < darkness.size(); i++) {
                 darkness.get(i).toFront();
             }
@@ -890,13 +893,13 @@ public class Controller {
             }
 
 
-            System.out.println("BOSS:  " +bossclass.boss.getX() + "    " + bossclass.boss.getY());
-            System.out.println("HERO:  " +hero.getX() + "    " + hero.getY());
-            if (bosshurt(hero,bossclass.boss)) {
+            System.out.println("BOSS:  " + bossclass.boss.getX() + "    " + bossclass.boss.getY());
+            System.out.println("HERO:  " + hero.getX() + "    " + hero.getY());
+            if (bosshurt(hero, bossclass.boss)) {
                 if (lightcounter <= 10) {
-                   health = enemyclass.hurt(healthbar, health, 10);
+                    health = enemyclass.hurt(healthbar, health, 10);
                 } else {
-                    health =  enemyclass.hurt(healthbar, health, 5);
+                    health = enemyclass.hurt(healthbar, health, 5);
                 }
             }
         }
@@ -1055,6 +1058,10 @@ public class Controller {
         }
         predfields(wallcollision(walls, hero), enemies);
 
+        if(roomclass.roomnr == 50){
+            predfieldsboss(wallcollision(walls, hero), bossclass.boss);
+        }
+
         if (health <= 0) {
             healthbar.setProgress(2 / 100);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameOver.fxml"));
@@ -1146,11 +1153,11 @@ public class Controller {
 
     }
 
-    public boolean bosshurt(ImageView hero, ImageView boss){
-        return( hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY()) ||
-                ( hero.getX() == bossclass.boss.getX() + 64 && hero.getY() == bossclass.boss.getY()) ||
-                ( hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY() + 64)||
-                ( hero.getX() == bossclass.boss.getX()  + 64&& hero.getY() == bossclass.boss.getY() + 64);
+    public boolean bosshurt(ImageView hero, ImageView boss) {
+        return (hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY()) ||
+                (hero.getX() == bossclass.boss.getX() + 64 && hero.getY() == bossclass.boss.getY()) ||
+                (hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY() + 64) ||
+                (hero.getX() == bossclass.boss.getX() + 64 && hero.getY() == bossclass.boss.getY() + 64);
 
     }
 
@@ -1253,6 +1260,83 @@ public class Controller {
         }
 
     }
+
+
+    public void predfieldsboss(int[] available, ImageView boss) {
+
+        boolean[] attackablefields = new boolean[4];
+
+        for (int x = 0; x < 128; x += 64) {
+            for (int y = 0; y < 128; y += 64) {
+
+                if (available[0] == 0) {
+                    fieldn.setImage(imagenotava);
+                } else {
+                    if (hero.getX() == boss.getX() + x && (hero.getY() - 64) == boss.getY() + y && !attackablefields[0]) {
+                        fieldn.setImage(attackableimg);
+                        attackablefields[0] = true;
+                    } else {
+                        if (attackablefields[0]) {
+                            fieldn.setImage(attackableimg);
+                            System.out.println("MONSTER IN N");
+                        } else {
+                            fieldn.setImage(imageavailable);
+                            System.out.println("SET AVAILABLE N");
+                        }
+                    }
+                }
+                if (available[1] == 0) {
+                    fieldw.setImage(imagenotava);
+                } else {
+                    if ((hero.getX() - 64) == boss.getX() + x && hero.getY() == boss.getY() + y && !attackablefields[1]) {
+                        fieldw.setImage(attackableimg);
+                        attackablefields[1] = true;
+                    } else {
+                        if (attackablefields[1]) {
+                            fieldw.setImage(attackableimg);
+                            System.out.println("MONSTER IN W");
+                        } else {
+                            fieldw.setImage(imageavailable);
+                            System.out.println("SET AVAILABLE W");
+                        }
+                    }
+                }
+                if (available[2] == 0) {
+                    fields.setImage(imagenotava);
+                } else {
+                    if (hero.getX() == boss.getX() + x && (hero.getY() + 64) == boss.getY() + y && !attackablefields[2]) {
+                        fields.setImage(attackableimg);
+                        attackablefields[2] = true;
+                    } else {
+                        if (attackablefields[2]) {
+                            fields.setImage(attackableimg);
+                            System.out.println("MONSTER IN S");
+                        } else {
+                            fields.setImage(imageavailable);
+                            System.out.println("SET AVAILABLE S");
+                        }
+                    }
+                }
+                if (available[3] == 0) {
+                    fieldo.setImage(imagenotava);
+                } else {
+                    if ((hero.getX() + 64) == boss.getX() + x && hero.getY() == boss.getY() + y && !attackablefields[3]) {
+                        fieldo.setImage(attackableimg);
+                        attackablefields[3] = true;
+                    } else {
+                        if (attackablefields[3]) {
+                            fieldo.setImage(attackableimg);
+                            System.out.println("MONSTER IN O");
+                        } else {
+                            fieldo.setImage(imageavailable);
+                            System.out.println("SET AVAILABLE O");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 
     public int[] wallcollision(ArrayList<ImageView> wall, ImageView hero) {
