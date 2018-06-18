@@ -315,6 +315,7 @@ public class Controller {
     int lightcounter = 70;
     int fear = 80;
     int selected = 1;
+    boolean cancelsuck = false;
 
     int slimehealth = 4;
     int floaterhealth = 4;
@@ -864,16 +865,28 @@ public class Controller {
 
 
             if (turn % 5 == 0) {
-                if (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30 && charge != 3) {
+                if (!cancelsuck && (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30) && charge != 3) {
+                    if (charge == 0){
+                        bossarmor = 3;
+                    }
                     bossclass.boss.setImage(bossclass.suckimg);
                     charge++;
+
                 } else {
+
+                    bossclass.boss.setImage(bossclass.bossimg);
                     bossclass.bossmove(hero, bossclass.boss, background, wallcollision(walls, bossclass.boss));
+                   if (charge == 0) {
+                       cancelsuck = false;
+                   }
                 }
-                if (charge == 3) {
+                if (charge == 3 && !cancelsuck) {
                     lightcounter = bossclass.suckattack(lightcounter, bossclass.boss);
                     health -= 5;
                     bossclass.boss.setImage(bossclass.bossimg);
+                    charge = 0;
+                    cancelsuck = false;
+                }else if (cancelsuck){
                     charge = 0;
                 }
             }
@@ -882,9 +895,16 @@ public class Controller {
                     fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") ||
                     fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j") ) {
                 if (bossarmor == 0) {
-                    if (freeslots[selected-1]) {
+                    if (freeslots[selected-1] && bossclass.bosshealth != 0) {
                         bossclass.bosshealth--;
-                        bossarmor = 1;
+                        cancelsuck = true;
+
+                        if (lightcounter <= 10){
+                            bossarmor = 2;
+                        }
+                        else {
+                            bossarmor = 1;
+                        }
                     }
                 }else{
                     bossarmor--;
