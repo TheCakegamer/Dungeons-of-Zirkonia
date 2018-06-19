@@ -335,8 +335,8 @@ public class Controller {
     Image light0 = new Image(getClass().getResource("/image/light0.png").toExternalForm());
     Image swordimg = new Image(getClass().getResource("/image/sword.png").toExternalForm());
     Image potionimg = new Image(getClass().getResource("/image/potion.gif").toExternalForm());
-    Image playerswordimg = new Image(getClass().getResource("/image/PlayerS.png").toExternalForm());
-    Image playerimg = new Image(getClass().getResource("/image/Player.png").toExternalForm());
+    Image playerswordimg = new Image(getClass().getResource("/image/PlayerS.gif").toExternalForm());
+    Image playerimg = new Image(getClass().getResource("/image/Player.gif").toExternalForm());
     Image chestclosedimg = new Image(getClass().getResource("/image/chest.png").toExternalForm());
     Image attackableimg = new Image(getClass().getResource("/image/attackable.png").toExternalForm());
     Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
@@ -350,7 +350,7 @@ public class Controller {
     Image roomimg8 = new Image(getClass().getResource("/image/8.png").toExternalForm());
     Image roomimg9 = new Image(getClass().getResource("/image/9.png").toExternalForm());
     Image roomimg0 = new Image(getClass().getResource("/image/0.png").toExternalForm());
-    Image playerhealimg = new Image(getClass().getResource("/image/playerhealed.gif").toExternalForm());
+    Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
     ArrayList<Image> Roomimgs = new ArrayList<>();
     Rooms roomclass = new Rooms();
     Enemy enemyclass = new Enemy();
