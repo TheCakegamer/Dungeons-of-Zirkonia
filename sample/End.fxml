@@ -11,7 +11,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.End"
-            prefHeight="680.0" prefWidth="1210.0">
+            prefHeight="679.0" prefWidth="1210.0">
     <children>
         <ImageView fitHeight="680.0" fitWidth="1210.0" pickOnBounds="true" preserveRatio="true" fx:id="endingimg"
                    onMouseClicked="#nextimg">

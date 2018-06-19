@@ -858,6 +858,8 @@ public class Controller {
                 }
             }
         } else {
+            nrdec.setVisible(false);
+            nrzif.setVisible(false);
             enemyclass.floater.setX(770);
             enemyclass.slime.setX(770);
             enemyclass.blob.setX(770);
