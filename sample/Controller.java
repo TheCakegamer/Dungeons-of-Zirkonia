@@ -1127,6 +1127,7 @@ public class Controller {
             stage.getIcons().add(new Image("image/Skull.png"));
             stage.setScene(new Scene(GO));
             Stage gamestage = (Stage) hero.getScene().getWindow();
+            stage.setResizable(false);
 
             stage.show();
             gamestage.close();
@@ -1165,9 +1166,7 @@ public class Controller {
             }
         }
 
-        if (keyEvent.getCharacter().equals("P")) {
-            roomclass.roomnr = 48;
-        }
+
 
         //INSERT ROOM NR AIKA
 

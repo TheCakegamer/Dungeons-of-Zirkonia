@@ -96,6 +96,7 @@ public class Boss {
         stage.getIcons().add(new Image("image/DoZweblogo_HD.png"));
         stage.setScene(new Scene(GO));
         Stage gamestage = (Stage) boss.getScene().getWindow();
+        stage.setResizable(false);
 
         stage.show();
         gamestage.close();
