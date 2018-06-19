@@ -350,6 +350,7 @@ public class Controller {
     Image roomimg8 = new Image(getClass().getResource("/image/8.png").toExternalForm());
     Image roomimg9 = new Image(getClass().getResource("/image/9.png").toExternalForm());
     Image roomimg0 = new Image(getClass().getResource("/image/0.png").toExternalForm());
+    Image playerpotion = new Image(getClass().getResource("/image/PlayerPotion.png").toExternalForm());
     Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
     ArrayList<Image> Roomimgs = new ArrayList<>();
     Rooms roomclass = new Rooms();
@@ -816,7 +817,10 @@ public class Controller {
 
         }
 
-        if (!freeslots[selected - 1]) {
+        if (potionslots[selected-1]) {
+
+            hero.setImage(playerpotion);
+        }else if(!freeslots[selected - 1]){
             hero.setImage(playerimg);
         }else {
             hero.setImage(playerswordimg);
