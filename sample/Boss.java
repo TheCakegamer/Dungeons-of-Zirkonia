@@ -92,6 +92,7 @@ public class Boss {
         GO = fxmlLoader.load();
         GO.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
         Stage stage = new Stage();
+        stage.setTitle("The End");
         stage.getIcons().add(new Image("image/DoZweblogo_HD.png"));
         stage.setScene(new Scene(GO));
         Stage gamestage = (Stage) boss.getScene().getWindow();

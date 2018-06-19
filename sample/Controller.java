@@ -775,10 +775,7 @@ public class Controller {
             chestopened = false;
         }
 
-        if (!freeslots[selected - 1]) {
-            hero.setImage(playerimg);
-        }
-        burn(keyEvent, selected);
+
 
         if (firstroom) {
             roomORX = new ArrayList<>();
@@ -818,6 +815,16 @@ public class Controller {
 
 
         }
+
+        if (!freeslots[selected - 1]) {
+            hero.setImage(playerimg);
+        }else {
+            hero.setImage(playerswordimg);
+        }
+
+
+
+        burn(keyEvent, selected);
 
 
         movement(wallcollision(walls, hero), keyEvent);
@@ -1112,6 +1119,7 @@ public class Controller {
             GO = (Parent) fxmlLoader.load();
             GO.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
             Stage stage = new Stage();
+            stage.setTitle("Game Over");
             stage.getIcons().add(new Image("image/Skull.png"));
             stage.setScene(new Scene(GO));
             Stage gamestage = (Stage) hero.getScene().getWindow();
