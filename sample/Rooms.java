@@ -392,14 +392,14 @@ public class Rooms{
     }
     private void changeroomfromS(ArrayList<javafx.scene.image.ImageView> walls, ArrayList<Double> roomORX,ArrayList<Double> roomORY) {
         Random rand = new Random();
-        int generate = rand.nextInt((5 - 1) + 1) + 1;
+        int generate = rand.nextInt((4 - 1) + 1) + 1;
         ArrayList<Double> roomSX;
         ArrayList<Double> roomSY;
         if (roomnr < 49) {
             switch (generate) {
                 case 1:
-                    roomSX = roomORX;
-                    roomSY = roomORY;
+                    roomSX = setroomOSW(false);
+                    roomSY = setroomOSW(true);
                     break;
                 case 2:
                     roomSX = setroomNOS(false);
@@ -413,13 +413,10 @@ public class Rooms{
                     roomSX = setroomNOS2(false);
                     roomSY = setroomNOS2(true);
                     break;
-                case 5:
+
+                default:
                     roomSX = setroomOSW(false);
                     roomSY = setroomOSW(true);
-                    break;
-                default:
-                    roomSX = roomORX;
-                    roomSY = roomORY;
                     break;
             }
         }else {

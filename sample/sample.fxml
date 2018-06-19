@@ -642,7 +642,7 @@
             <children>
                 <ImageView fx:id="hero" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <image>
-                        <Image url="@../image/Player.png" />
+                        <Image url="@../image/Player.gif" />
                     </image>
                 </ImageView>
                 <ImageView fx:id="fieldw" fitHeight="64.0" fitWidth="64.0" onKeyTyped="#move" opacity="0.5" pickOnBounds="true" preserveRatio="true" translateZ="1.0" GridPane.rowIndex="1">

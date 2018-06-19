@@ -35,7 +35,7 @@ public class Menu {
         primaryStage.getIcons().add(new Image("image/DoZweblogo_HD.png"));
         primaryStage.setScene(new Scene(main.root, 704, 832));
         main.root.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
-
+        primaryStage.setResizable(false);
 
         primaryStage.show();
 

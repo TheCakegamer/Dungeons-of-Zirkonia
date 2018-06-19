@@ -335,8 +335,8 @@ public class Controller {
     Image light0 = new Image(getClass().getResource("/image/light0.png").toExternalForm());
     Image swordimg = new Image(getClass().getResource("/image/sword.png").toExternalForm());
     Image potionimg = new Image(getClass().getResource("/image/potion.gif").toExternalForm());
-    Image playerswordimg = new Image(getClass().getResource("/image/PlayerS.png").toExternalForm());
-    Image playerimg = new Image(getClass().getResource("/image/Player.png").toExternalForm());
+    Image playerswordimg = new Image(getClass().getResource("/image/PlayerS.gif").toExternalForm());
+    Image playerimg = new Image(getClass().getResource("/image/Player.gif").toExternalForm());
     Image chestclosedimg = new Image(getClass().getResource("/image/chest.png").toExternalForm());
     Image attackableimg = new Image(getClass().getResource("/image/attackable.png").toExternalForm());
     Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
@@ -350,7 +350,8 @@ public class Controller {
     Image roomimg8 = new Image(getClass().getResource("/image/8.png").toExternalForm());
     Image roomimg9 = new Image(getClass().getResource("/image/9.png").toExternalForm());
     Image roomimg0 = new Image(getClass().getResource("/image/0.png").toExternalForm());
-    Image playerhealimg = new Image(getClass().getResource("/image/playerhealed.gif").toExternalForm());
+    Image playerpotion = new Image(getClass().getResource("/image/PlayerPotion.png").toExternalForm());
+    Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
     ArrayList<Image> Roomimgs = new ArrayList<>();
     Rooms roomclass = new Rooms();
     Enemy enemyclass = new Enemy();
@@ -775,10 +776,7 @@ public class Controller {
             chestopened = false;
         }
 
-        if (!freeslots[selected - 1]) {
-            hero.setImage(playerimg);
-        }
-        burn(keyEvent, selected);
+
 
         if (firstroom) {
             roomORX = new ArrayList<>();
@@ -818,6 +816,19 @@ public class Controller {
 
 
         }
+
+        if (potionslots[selected-1]) {
+
+            hero.setImage(playerpotion);
+        }else if(!freeslots[selected - 1]){
+            hero.setImage(playerimg);
+        }else {
+            hero.setImage(playerswordimg);
+        }
+
+
+
+        burn(keyEvent, selected);
 
 
         movement(wallcollision(walls, hero), keyEvent);
@@ -1112,9 +1123,11 @@ public class Controller {
             GO = (Parent) fxmlLoader.load();
             GO.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
             Stage stage = new Stage();
+            stage.setTitle("Game Over");
             stage.getIcons().add(new Image("image/Skull.png"));
             stage.setScene(new Scene(GO));
             Stage gamestage = (Stage) hero.getScene().getWindow();
+            stage.setResizable(false);
 
             stage.show();
             gamestage.close();
@@ -1153,9 +1166,7 @@ public class Controller {
             }
         }
 
-        if (keyEvent.getCharacter().equals("P")) {
-            roomclass.roomnr = 48;
-        }
+
 
         //INSERT ROOM NR AIKA
 
