@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 
-
 public class Main extends Application {
 
     Stage primaryStage = new Stage();
@@ -20,7 +19,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Platform.setImplicitExit(false);
-        root  = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         primaryStage.setTitle("Dungeons of Zirkonia");
         primaryStage.getIcons().add(new Image("image/DoZweblogo_HD.png"));
         primaryStage.setScene(new Scene(root, 1210, 680));
@@ -29,7 +28,6 @@ public class Main extends Application {
         primaryStage.show();
 
     }
-
 
 
     public static void main(String[] args) {

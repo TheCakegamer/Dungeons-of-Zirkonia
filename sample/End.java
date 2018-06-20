@@ -15,10 +15,10 @@ public class End {
     ImageView endingimg;
 
 
-    public void nextimg(){
+    public void nextimg() {
         progress++;
 
-        switch (progress){
+        switch (progress) {
 
             case 1:
                 endingimg.setImage(ed2);

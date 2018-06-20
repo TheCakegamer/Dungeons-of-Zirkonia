@@ -777,7 +777,6 @@ public class Controller {
         }
 
 
-
         if (firstroom) {
             roomORX = new ArrayList<>();
             roomORY = new ArrayList<>();
@@ -786,6 +785,21 @@ public class Controller {
                 roomORY.add(walls.get(i).getY());
             }
             firstroom = false;
+        }
+
+        if (keyEvent.getCharacter().equals("x")){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
+
+            Parent GO;
+            GO = fxmlLoader.load();
+            GO.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setTitle("Quit");
+            stage.getIcons().add(new Image("image/DoZweblogo_HD.png"));
+            stage.setScene(new Scene(GO));
+            stage.setResizable(false);
+
+            stage.show();
         }
 
         System.out.println(lightcounter);
@@ -817,15 +831,14 @@ public class Controller {
 
         }
 
-        if (potionslots[selected-1]) {
+        if (potionslots[selected - 1]) {
 
             hero.setImage(playerpotion);
-        }else if(!freeslots[selected - 1]){
+        } else if (!freeslots[selected - 1]) {
             hero.setImage(playerimg);
-        }else {
+        } else {
             hero.setImage(playerswordimg);
         }
-
 
 
         burn(keyEvent, selected);
@@ -1165,7 +1178,6 @@ public class Controller {
                 System.out.println("ENEMY REMOVED!!!!!");
             }
         }
-
 
 
         //INSERT ROOM NR AIKA

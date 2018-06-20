@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Quit">
+   <children>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="53.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Quit.png" />
+         </image>
+      </ImageView>
+       <Label layoutX="233.0" layoutY="187.0" text="Do you really want to quit?" textFill="#4d0909">
+           <font>
+               <Font name="Elephant" size="18.0" />
+           </font>
+       </Label>
+      <Button layoutX="53.0" layoutY="314.0" mnemonicParsing="false" text="Yes, I want to leave the dungeon" onAction="#quit" fx:id="quitbutton" textFill="lightgray"/>
+      <Button layoutX="353.0" layoutY="314.0" mnemonicParsing="false" text="No, I want to stay" onAction="#resume" textFill="lightgray" />
+   </children>
+</AnchorPane>
