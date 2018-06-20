@@ -39,7 +39,17 @@ public class Menu {
 
         primaryStage.show();
 
+        primaryStage.setOnCloseRequest(event -> {
+            requestExit();
+            event.consume();
+        });
+
 
         menustage.close();
     }
-}
+
+
+    private void requestExit() {
+        System.exit(1);
+    }
+    }
