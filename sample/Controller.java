@@ -307,6 +307,8 @@ public class Controller {
     ImageView nrdec;
     @FXML
     ImageView nrzif;
+    @FXML
+    ImageView firstlightimgv;
     ArrayList<ImageView> slots = new ArrayList<>();
     boolean[] freeslots = {false, false, false, false, false, false, false, false, false};
     boolean[] potionslots = {false, false, false, false, false, false, false, false, false};
@@ -352,6 +354,7 @@ public class Controller {
     Image roomimg0 = new Image(getClass().getResource("/image/0.png").toExternalForm());
     Image playerpotion = new Image(getClass().getResource("/image/PlayerPotion.png").toExternalForm());
     Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
+    Image firstlight = new Image(getClass().getResource("/image/firstlight.gif").toExternalForm());
     ArrayList<Image> Roomimgs = new ArrayList<>();
     Rooms roomclass = new Rooms();
     Enemy enemyclass = new Enemy();
@@ -517,6 +520,8 @@ public class Controller {
         enemyclass.blob.setX(770);
 
 
+
+
         for (int m = 1; m <= 9; m++) {
             ImageView slot = new ImageView();
 
@@ -599,6 +604,8 @@ public class Controller {
             darkyadd += 64;
             System.out.println();
         }
+
+
 
     }
 
@@ -812,7 +819,7 @@ public class Controller {
         if (keyEvent.getCharacter().equals("e")) {
             if (chest.getX() == hero.getX() && chest.getY() == hero.getY()) {
                 for (int i = 0; i < 9; i++) {
-                    if (turn % 5 == 0 && !freeslots[i] && !potionslots[i]) {
+                    if (turn % 5 == 0 && !freeslots[i] && !potionslots[i] && roomclass.roomnr != 1) {
                         openChest(hero.getX(), hero.getY(), chest.getX(), chest.getY(), slots.get(i), true);
                         potionslots[i] = true;
                         chestopened = true;
@@ -1010,6 +1017,10 @@ public class Controller {
         System.out.println("Enemy B X: " + enemyclass.blob.getX());
         System.out.println("Enemy B Y: " + enemyclass.blob.getY());
 
+        if(roomclass.roomnr == 2){
+            background.getChildren().remove(firstlightimgv);
+        }
+
 
         if (lightcounter >= 50) {
             lightup(hero.getX(), hero.getY(), 4);
@@ -1057,6 +1068,8 @@ public class Controller {
             lightmeter.setImage(light0);
 
         }
+
+
 
 
         fearmetercheck(fear);

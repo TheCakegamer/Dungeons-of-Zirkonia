@@ -18,241 +18,10 @@ public class Rooms{
     boolean floaterinroom = false;
     boolean blobinroom = false;
     String lastroom = "ST";
+    RoomList r = new RoomList();
 
 
-    public ArrayList<Double> setroomNO(boolean setY){
-        ArrayList<Double> roomNOX = new ArrayList<Double>();
-        ArrayList<Double> roomNOY = new ArrayList<Double>();
 
-        int[][] roomNO ={
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,1,0,1,0,0,0,0,0,0,1},
-                {1,0,0,1,0,0,0,0,0,0,1},
-                {1,0,0,1,0,0,0,0,0,0,1},
-                {1,0,0,1,0,0,0,0,0,0,1},
-                {1,0,1,1,0,0,1,1,0,0,0},
-                {1,0,1,0,0,0,0,1,0,0,1},
-                {1,0,1,0,0,0,0,1,0,0,1},
-                {1,0,1,0,0,0,0,1,0,0,1},
-                {1,0,0,0,0,0,0,1,0,0,1},
-                {1,1,1,1,1,1,1,1,1,1,1}
-
-        };
-
-     return buildroom(roomNOX,roomNOY,roomNO,setY);
-
-    }
-
-    public ArrayList<Double> setroomNsw(boolean setY){
-        ArrayList<Double> roomNSWX = new ArrayList<Double>();
-        ArrayList<Double> roomNSWY = new ArrayList<Double>();
-
-        int[][] roomNSW ={
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,1,1,1,1,0,0,0,0,0,1},
-                {1,1,1,1,1,1,1,1,1,0,1},
-                {1,1,0,0,0,0,1,1,1,0,1},
-                {1,1,0,0,0,0,1,1,1,0,1},
-                {0,0,0,0,0,0,1,1,1,0,1},
-                {1,1,0,0,0,0,1,1,1,0,1},
-                {1,1,0,0,0,0,1,0,0,0,1},
-                {1,1,1,1,1,0,0,0,0,0,1},
-                {1,1,1,1,1,0,1,0,0,0,1},
-                {1,1,1,1,1,0,1,1,1,1,1}
-
-        };
-
-
-    return buildroom(roomNSWX,roomNSWY,roomNSW,setY);
-    }
-
-    public ArrayList<Double> setroomNW(boolean setY){
-        ArrayList<Double> roomNWX = new ArrayList<Double>();
-        ArrayList<Double> roomNWY = new ArrayList<Double>();
-
-        int[][] roomNW ={
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,0,0,0,1,0,0,0,0,0,1},
-                {1,0,1,0,1,0,0,0,0,0,1},
-                {1,0,1,0,1,0,0,0,0,0,1},
-                {1,0,1,0,1,0,0,0,0,0,1},
-                {0,0,1,0,1,0,0,0,0,0,1},
-                {1,1,1,0,1,1,1,1,1,0,1},
-                {1,1,1,0,1,0,0,0,0,0,1},
-                {1,1,1,0,1,0,0,0,0,0,1},
-                {1,1,1,0,0,0,0,0,0,0,1},
-                {1,1,1,1,1,1,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomNWX,roomNWY,roomNW,setY);
-    }
-
-    public ArrayList<Double> setroomNOS(boolean setY){
-        ArrayList<Double> roomNOSX = new ArrayList<Double>();
-        ArrayList<Double> roomNOSY = new ArrayList<Double>();
-
-        int[][] roomNOS ={
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,0,0,0,1,0,1,1,1,1,1},
-                {1,0,0,0,1,0,1,1,1,1,1},
-                {1,0,0,0,0,0,0,0,0,0,0},
-                {1,0,0,0,0,0,1,1,1,1,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,1,1,1,1,0,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomNOSX,roomNOSY,roomNOS,setY);
-    }
-
-    public ArrayList<Double> setroomOW(boolean setY){
-        ArrayList<Double> roomOWX = new ArrayList<Double>();
-        ArrayList<Double> roomOWSY = new ArrayList<Double>();
-
-        int[][] roomOW ={
-                {1,1,1,1,1,1,1,1,1,1,1},
-                {1,1,1,0,0,0,0,0,1,1,1},
-                {1,1,1,0,0,0,0,0,1,1,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {0,0,0,0,0,0,0,0,0,0,0},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,1,1,0,0,0,0,0,1,1,1},
-                {1,1,1,1,0,0,0,0,1,1,1},
-                {1,1,1,1,1,1,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomOWX,roomOWSY,roomOW,setY);
-    }
-
-
-    public ArrayList<Double> setroomNOS2(boolean setY){
-        ArrayList<Double> roomNOSX = new ArrayList<Double>();
-        ArrayList<Double> roomNOSY = new ArrayList<Double>();
-
-        int[][] roomNOS ={
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,0},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,1,1,1,0,1,1,1,1,1},
-                {1,0,0,0,1,0,1,1,1,1,1},
-                {1,0,1,0,1,0,1,1,1,1,1},
-                {1,1,1,1,1,0,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomNOSX,roomNOSY,roomNOS,setY);
-    }
-
-    public ArrayList<Double> setroomNOW(boolean setY){
-        ArrayList<Double> roomNOWX = new ArrayList<Double>();
-        ArrayList<Double> roomNOWSY = new ArrayList<Double>();
-
-        int[][] roomNOW ={
-                {1,1,1,1,1,0,1,1,1,1,1},
-                {1,0,0,0,1,0,1,1,1,1,1},
-                {1,0,1,0,1,0,1,0,0,0,1},
-                {1,0,1,0,1,0,1,0,0,0,1},
-                {1,0,1,0,1,0,1,0,1,0,1},
-                {0,0,1,0,1,0,1,0,1,0,0},
-                {1,1,1,0,0,0,1,0,1,1,1},
-                {1,0,0,0,0,0,1,0,1,1,1},
-                {1,0,0,0,0,0,1,0,1,1,1},
-                {1,0,0,0,0,0,0,0,1,1,1},
-                {1,1,1,1,1,1,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomNOWX,roomNOWSY,roomNOW,setY);
-    }
-
-    public ArrayList<Double> setroomOSW(boolean setY){
-        ArrayList<Double> roomOSWX = new ArrayList<Double>();
-        ArrayList<Double> roomOSWY = new ArrayList<Double>();
-
-        int[][] roomOSW ={
-                {1,1,1,1,1,1,1,1,1,1,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,1,0,1,0,0,0,1},
-                {1,0,0,1,1,0,1,1,0,0,1},
-                {1,0,0,1,0,0,0,1,0,0,1},
-                {0,0,0,1,0,0,0,1,0,0,0},
-                {1,0,0,1,0,0,0,1,0,0,1},
-                {1,0,0,1,1,0,1,1,0,0,1},
-                {1,0,0,0,1,0,1,0,0,0,1},
-                {1,0,0,1,1,0,1,1,0,0,1},
-                {1,1,1,1,1,0,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomOSWX,roomOSWY,roomOSW,setY);
-    }
-
-    public ArrayList<Double> setBoss(boolean setY){
-        ArrayList<Double> roomBossX = new ArrayList<Double>();
-        ArrayList<Double> roomBossY = new ArrayList<Double>();
-
-        int[][] roomBoss ={
-                {1,1,1,1,1,1,1,1,1,1,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,0,0,0,0,0,0,0,0,0,1},
-                {1,1,1,1,1,1,1,1,1,1,1}
-
-        };
-
-
-        return buildroom(roomBossX,roomBossY,roomBoss,setY);
-    }
-
-
-    public ArrayList<Double> buildroom(ArrayList roomX, ArrayList roomY, int[][] roomBase, boolean setY){
-        int y=-2;
-        for (int i = 0; i <= 10; i++) {
-            int x = -2;
-            for (int j = 0; j <= 10; j++) {
-                if (roomBase[i][j] == 1) {
-                    roomX.add(x * 64.0);
-                    roomY.add(y * 64.0);
-                    x++;
-                } else if (roomBase[i][j] == 0) {
-                    roomX.add(10 * 64.0);
-                    roomY.add(y * 64.0);
-                    x++;
-                }
-            }
-            y++;
-        }
-
-        if(!setY) {
-            return roomX;
-        }else {
-            return roomY;
-        }
-    }
 
 
     public void changeroom(javafx.scene.image.ImageView hero, ArrayList<javafx.scene.image.ImageView> walls, ArrayList<Double> roomORX, ArrayList<Double> roomORY, Pane background, ImageView controlls){
@@ -341,39 +110,75 @@ public class Rooms{
 
     private void changeroomfromN(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
-        int generate = rand.nextInt((5 - 1) + 1) + 1;
+        int generate = rand.nextInt((14 - 1) + 1) + 1;
         ArrayList<Double> roomNX;
         ArrayList<Double> roomNY;
         if (roomnr < 49) {
             switch (generate) {
                 case 1:
-                    roomNX = setroomNO(false);
-                    roomNY = setroomNO(true);
+                    roomNX = r.setroomNO(false);
+                    roomNY = r.setroomNO(true);
                     break;
                 case 2:
-                    roomNX = setroomNW(false);
-                    roomNY = setroomNW(true);
+                    roomNX = r.setroomNW(false);
+                    roomNY = r.setroomNW(true);
                     break;
                 case 3:
-                    roomNX = setroomNOS(false);
-                    roomNY = setroomNOS(true);
+                    roomNX = r.setroomNOS(false);
+                    roomNY = r.setroomNOS(true);
                     break;
                 case 4:
-                    roomNX = setroomNOS2(false);
-                    roomNY = setroomNOS2(true);
+                    roomNX = r.setroomNOS2(false);
+                    roomNY = r.setroomNOS2(true);
                     break;
                 case 5:
-                    roomNX = setroomNOW(false);
-                    roomNY = setroomNOW(true);
+                    roomNX = r.setroomNOW(false);
+                    roomNY = r.setroomNOW(true);
+                    break;
+                case 6:
+                    roomNX = r.setroomNOSW(false);
+                    roomNY = r.setroomNOSW(true);
+                    break;
+                case 7:
+                    roomNX = r.setroomNOSW2(false);
+                    roomNY = r.setroomNOSW2(true);
+                    break;
+                case 8:
+                    roomNX = r.setroomNOSW3(false);
+                    roomNY = r.setroomNOSW3(true);
+                    break;
+                case 9:
+                    roomNX = r.setroomNOSW4(false);
+                    roomNY = r.setroomNOSW4(true);
+                    break;
+                case 10:
+                    roomNX = r.setroomNOSW5(false);
+                    roomNY = r.setroomNOSW5(true);
+                    break;
+                case 11:
+                    roomNX = r.setroomNO2(false);
+                    roomNY = r.setroomNO2(true);
+                    break;
+                case 12:
+                    roomNX = r.setroomNS(false);
+                    roomNY = r.setroomNS(true);
+                    break;
+                case 13:
+                    roomNX = r.setroomNOS3(false);
+                    roomNY = r.setroomNOS3(true);
+                    break;
+                case 14:
+                    roomNX = r.setroomNOW2(false);
+                    roomNY = r.setroomNOW2(true);
                     break;
                 default:
-                    roomNX = setroomNO(false);
-                    roomNY = setroomNO(true);
+                    roomNX = r.setroomNO(false);
+                    roomNY = r.setroomNO(true);
                     break;
             }
         } else {
-            roomNX = setBoss(false);
-            roomNY = setBoss(true);
+            roomNX = r.setBoss(false);
+            roomNY = r.setBoss(true);
         }
 
 
@@ -392,36 +197,68 @@ public class Rooms{
     }
     private void changeroomfromS(ArrayList<javafx.scene.image.ImageView> walls, ArrayList<Double> roomORX,ArrayList<Double> roomORY) {
         Random rand = new Random();
-        int generate = rand.nextInt((4 - 1) + 1) + 1;
+        int generate = rand.nextInt((12 - 1) + 1) + 1;
         ArrayList<Double> roomSX;
         ArrayList<Double> roomSY;
         if (roomnr < 49) {
             switch (generate) {
                 case 1:
-                    roomSX = setroomOSW(false);
-                    roomSY = setroomOSW(true);
+                    roomSX = r.setroomOSW(false);
+                    roomSY = r.setroomOSW(true);
                     break;
                 case 2:
-                    roomSX = setroomNOS(false);
-                    roomSY = setroomNOS(true);
+                    roomSX = r.setroomNOS(false);
+                    roomSY = r.setroomNOS(true);
                     break;
                 case 3:
-                    roomSX = setroomNsw(false);
-                    roomSY = setroomNsw(true);
+                    roomSX = r.setroomNsw(false);
+                    roomSY = r.setroomNsw(true);
                     break;
                 case 4:
-                    roomSX = setroomNOS2(false);
-                    roomSY = setroomNOS2(true);
+                    roomSX = r.setroomNOS2(false);
+                    roomSY = r.setroomNOS2(true);
+                    break;
+                case 5:
+                    roomSX = r.setroomNOSW(false);
+                    roomSY = r.setroomNOSW(true);
+                    break;
+                case 6:
+                    roomSX = r.setroomNOSW2(false);
+                    roomSY = r.setroomNOSW2(true);
+                    break;
+                case 7:
+                    roomSX = r.setroomNOSW3(false);
+                    roomSY = r.setroomNOSW3(true);
+                    break;
+                case 8:
+                    roomSX = r.setroomNOSW4(false);
+                    roomSY = r.setroomNOSW4(true);
+                    break;
+                case 9:
+                    roomSX = r.setroomNOSW5(false);
+                    roomSY = r.setroomNOSW5(true);
+                    break;
+                case 10:
+                    roomSX = r.setroomNS(false);
+                    roomSY = r.setroomNS(true);
+                    break;
+                case 11:
+                    roomSX = r.setroomNOS3(false);
+                    roomSY = r.setroomNOS3(true);
+                    break;
+                case 12:
+                    roomSX = r.setroomOSW2(false);
+                    roomSY = r.setroomOSW2(true);
                     break;
 
                 default:
-                    roomSX = setroomOSW(false);
-                    roomSY = setroomOSW(true);
+                    roomSX = r.setroomOSW(false);
+                    roomSY = r.setroomOSW(true);
                     break;
             }
         }else {
-            roomSX = setBoss(false);
-            roomSY = setBoss(true);
+            roomSX = r.setBoss(false);
+            roomSY = r.setBoss(true);
         }
 
         for (int i = 0; i < roomSX.size(); i++) {
@@ -435,41 +272,81 @@ public class Rooms{
 
     private  void changeroomfromW(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
-        int generate = rand.nextInt((5 - 1) + 1) + 1;
+        int generate = rand.nextInt((15 - 1) + 1) + 1;
         ArrayList<Double> roomWX;
         ArrayList<Double> roomWY;
 
         if (roomnr < 49) {
             switch (generate) {
                 case 1:
-                    roomWX = setroomNW(false);
-                    roomWY = setroomNW(true);
+                    roomWX = r.setroomNW(false);
+                    roomWY = r.setroomNW(true);
                     break;
                 case 2:
-                    roomWX = setroomNsw(false);
-                    roomWY = setroomNsw(true);
+                    roomWX = r.setroomNsw(false);
+                    roomWY = r.setroomNsw(true);
                     break;
                 case 3:
-                    roomWX = setroomOW(false);
-                    roomWY = setroomOW(true);
+                    roomWX = r.setroomOW(false);
+                    roomWY = r.setroomOW(true);
                     break;
                 case 4:
-                    roomWX = setroomNOW(false);
-                    roomWY = setroomNOW(true);
+                    roomWX = r.setroomNOW(false);
+                    roomWY = r.setroomNOW(true);
                     break;
                 case 5:
-                    roomWX = setroomOSW(false);
-                    roomWY = setroomOSW(true);
+                    roomWX = r.setroomOSW(false);
+                    roomWY = r.setroomOSW(true);
+                    break;
+                case 6:
+                    roomWX = r.setroomNOSW(false);
+                    roomWY = r.setroomNOSW(true);
+                    break;
+                case 7:
+                    roomWX = r.setroomNOSW2(false);
+                    roomWY = r.setroomNOSW2(true);
+                    break;
+                case 8:
+                    roomWX = r.setroomNOSW3(false);
+                    roomWY = r.setroomNOSW3(true);
+                    break;
+                case 9:
+                    roomWX = r.setroomNOSW4(false);
+                    roomWY = r.setroomNOSW4(true);
+                    break;
+                case 10:
+                    roomWX = r.setroomNOSW5(false);
+                    roomWY = r.setroomNOSW5(true);
+                    break;
+                case 11:
+                    roomWX = r.setroomOSW2(false);
+                    roomWY = r.setroomOSW2(true);
+                    break;
+                case 12:
+                    roomWX = r.setroomNOW2(false);
+                    roomWY = r.setroomNOW2(true);
+                    break;
+                case 13:
+                    roomWX = r.setroomOW2(false);
+                    roomWY = r.setroomOW2(true);
+                    break;
+                case 14:
+                    roomWX = r.setroomOW3(false);
+                    roomWY = r.setroomOW3(true);
+                    break;
+                case 15:
+                    roomWX = r.setroomOW4(false);
+                    roomWY = r.setroomOW4(true);
                     break;
 
                 default:
-                    roomWX = setroomNsw(false);
-                    roomWY = setroomNsw(true);
+                    roomWX = r.setroomNsw(false);
+                    roomWY = r.setroomNsw(true);
                     break;
             }
         }else  {
-            roomWX = setBoss(false);
-            roomWY = setBoss(true);
+            roomWX = r.setBoss(false);
+            roomWY = r.setBoss(true);
         }
 
 
@@ -485,43 +362,91 @@ public class Rooms{
 
     private  void changeroomfromO(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
-        int generate = rand.nextInt((6 - 1) + 1) + 1;
+        int generate = rand.nextInt((18 - 1) + 1) + 1;
         ArrayList<Double> roomOX;
         ArrayList<Double> roomOY;
         if (roomnr < 49) {
             switch (generate) {
                 case 1:
-                    roomOX = setroomNOS(false);
-                    roomOY = setroomNOS(true);
+                    roomOX = r.setroomNOS(false);
+                    roomOY = r.setroomNOS(true);
                     break;
                 case 2:
-                    roomOX = setroomNO(false);
-                    roomOY = setroomNO(true);
+                    roomOX = r.setroomNO(false);
+                    roomOY = r.setroomNO(true);
                     break;
                 case 3:
-                    roomOX = setroomOW(false);
-                    roomOY = setroomOW(true);
+                    roomOX = r.setroomOW(false);
+                    roomOY = r.setroomOW(true);
                     break;
                 case 4:
-                    roomOX = setroomNOS2(false);
-                    roomOY = setroomNOS2(true);
+                    roomOX = r.setroomNOS2(false);
+                    roomOY = r.setroomNOS2(true);
                     break;
                 case 5:
-                    roomOX = setroomNOW(false);
-                    roomOY = setroomNOW(true);
+                    roomOX = r.setroomNOW(false);
+                    roomOY = r.setroomNOW(true);
                     break;
                 case 6:
-                    roomOX = setroomOSW(false);
-                    roomOY = setroomOSW(true);
+                    roomOX = r.setroomOSW(false);
+                    roomOY = r.setroomOSW(true);
+                    break;
+                case 7:
+                    roomOX = r.setroomNOSW(false);
+                    roomOY = r.setroomNOSW(true);
+                    break;
+                case 8:
+                    roomOX = r.setroomNOSW2(false);
+                    roomOY = r.setroomNOSW2(true);
+                    break;
+                case 9:
+                    roomOX = r.setroomNOSW3(false);
+                    roomOY = r.setroomNOSW3(true);
+                    break;
+                case 10:
+                    roomOX = r.setroomNOSW4(false);
+                    roomOY = r.setroomNOSW4(true);
+                    break;
+                case 11:
+                    roomOX = r.setroomNOSW5(false);
+                    roomOY = r.setroomNOSW5(true);
+                    break;
+                case 12:
+                    roomOX = r.setroomNO2(false);
+                    roomOY = r.setroomNO2(true);
+                    break;
+                case 13:
+                    roomOX = r.setroomOSW2(false);
+                    roomOY = r.setroomOSW2(true);
+                    break;
+                case 14:
+                    roomOX = r.setroomNOW2(false);
+                    roomOY = r.setroomNOW2(true);
+                    break;
+                case 15:
+                    roomOX = r.setroomNOS3(false);
+                    roomOY = r.setroomNOS3(true);
+                    break;
+                case 16:
+                    roomOX = r.setroomOW2(false);
+                    roomOY = r.setroomOW2(true);
+                    break;
+                case 17:
+                    roomOX = r.setroomOW3(false);
+                    roomOY = r.setroomOW3(true);
+                    break;
+                case 18:
+                    roomOX = r.setroomOW4(false);
+                    roomOY = r.setroomOW4(true);
                     break;
                 default:
-                    roomOX = setroomNOS(false);
-                    roomOY = setroomNOS(true);
+                    roomOX = r.setroomNOS(false);
+                    roomOY = r.setroomNOS(true);
                     break;
             }
         }else {
-            roomOX = setBoss(false);
-            roomOY = setBoss(true);
+            roomOX = r.setBoss(false);
+            roomOY = r.setBoss(true);
         }
 
 
