@@ -44,248 +44,6 @@ public class Controller {
     ImageView fields;
     @FXML
     ImageView fieldw;
-    @FXML
-    ImageView wall;
-    @FXML
-    ImageView wall2;
-    @FXML
-    ImageView wall3;
-    @FXML
-    ImageView wall4;
-    @FXML
-    ImageView wall5;
-    @FXML
-    ImageView wall6;
-    @FXML
-    ImageView wall7;
-    @FXML
-    ImageView wall8;
-    @FXML
-    ImageView wall9;
-    @FXML
-    ImageView wall10;
-    @FXML
-    ImageView wall11;
-    @FXML
-    ImageView wall12;
-    @FXML
-    ImageView wall13;
-    @FXML
-    ImageView wall14;
-    @FXML
-    ImageView wall15;
-    @FXML
-    ImageView wall16;
-    @FXML
-    ImageView wall17;
-    @FXML
-    ImageView wall18;
-    @FXML
-    ImageView wall19;
-    @FXML
-    ImageView wall20;
-    @FXML
-    ImageView wall21;
-    @FXML
-    ImageView wall22;
-    @FXML
-    ImageView wall23;
-    @FXML
-    ImageView wall24;
-    @FXML
-    ImageView wall25;
-    @FXML
-    ImageView wall26;
-    @FXML
-    ImageView wall27;
-    @FXML
-    ImageView wall28;
-    @FXML
-    ImageView wall29;
-    @FXML
-    ImageView wall30;
-    @FXML
-    ImageView wall31;
-    @FXML
-    ImageView wall32;
-    @FXML
-    ImageView wall33;
-    @FXML
-    ImageView wall34;
-    @FXML
-    ImageView wall35;
-    @FXML
-    ImageView wall36;
-    @FXML
-    ImageView wall37;
-    @FXML
-    ImageView wall38;
-    @FXML
-    ImageView wall39;
-    @FXML
-    ImageView wall40;
-    @FXML
-    ImageView wall41;
-    @FXML
-    ImageView wall42;
-    @FXML
-    ImageView wall43;
-    @FXML
-    ImageView wall44;
-    @FXML
-    ImageView wall45;
-    @FXML
-    ImageView wall46;
-    @FXML
-    ImageView wall47;
-    @FXML
-    ImageView wall48;
-    @FXML
-    ImageView wall49;
-    @FXML
-    ImageView wall50;
-    @FXML
-    ImageView wall51;
-    @FXML
-    ImageView wall52;
-    @FXML
-    ImageView wall53;
-    @FXML
-    ImageView wall54;
-    @FXML
-    ImageView wall55;
-    @FXML
-    ImageView wall56;
-    @FXML
-    ImageView wall57;
-    @FXML
-    ImageView wall58;
-    @FXML
-    ImageView wall59;
-    @FXML
-    ImageView wall60;
-    @FXML
-    ImageView wall61;
-    @FXML
-    ImageView wall62;
-    @FXML
-    ImageView wall63;
-    @FXML
-    ImageView wall64;
-    @FXML
-    ImageView wall65;
-    @FXML
-    ImageView wall66;
-    @FXML
-    ImageView wall67;
-    @FXML
-    ImageView wall68;
-    @FXML
-    ImageView wall69;
-    @FXML
-    ImageView wall70;
-    @FXML
-    ImageView wall71;
-    @FXML
-    ImageView wall72;
-    @FXML
-    ImageView wall73;
-    @FXML
-    ImageView wall74;
-    @FXML
-    ImageView wall75;
-    @FXML
-    ImageView wall76;
-    @FXML
-    ImageView wall77;
-    @FXML
-    ImageView wall78;
-    @FXML
-    ImageView wall79;
-    @FXML
-    ImageView wall80;
-    @FXML
-    ImageView wall81;
-    @FXML
-    ImageView wall82;
-    @FXML
-    ImageView wall83;
-    @FXML
-    ImageView wall84;
-    @FXML
-    ImageView wall85;
-    @FXML
-    ImageView wall86;
-    @FXML
-    ImageView wall87;
-    @FXML
-    ImageView wall88;
-    @FXML
-    ImageView wall89;
-    @FXML
-    ImageView wall90;
-    @FXML
-    ImageView wall91;
-    @FXML
-    ImageView wall92;
-    @FXML
-    ImageView wall93;
-    @FXML
-    ImageView wall94;
-    @FXML
-    ImageView wall95;
-    @FXML
-    ImageView wall96;
-    @FXML
-    ImageView wall97;
-    @FXML
-    ImageView wall98;
-    @FXML
-    ImageView wall99;
-    @FXML
-    ImageView wall100;
-    @FXML
-    ImageView wall101;
-    @FXML
-    ImageView wall102;
-    @FXML
-    ImageView wall103;
-    @FXML
-    ImageView wall104;
-    @FXML
-    ImageView wall105;
-    @FXML
-    ImageView wall106;
-    @FXML
-    ImageView wall107;
-    @FXML
-    ImageView wall108;
-    @FXML
-    ImageView wall109;
-    @FXML
-    ImageView wall110;
-    @FXML
-    ImageView wall111;
-    @FXML
-    ImageView wall112;
-    @FXML
-    ImageView wall113;
-    @FXML
-    ImageView wall114;
-    @FXML
-    ImageView wall115;
-    @FXML
-    ImageView wall116;
-    @FXML
-    ImageView wall117;
-    @FXML
-    ImageView wall118;
-    @FXML
-    ImageView wall119;
-    @FXML
-    ImageView wall120;
-    @FXML
-    ImageView wall121;
 
     @FXML
     ImageView chest;
@@ -355,6 +113,7 @@ public class Controller {
     Image playerpotion = new Image(getClass().getResource("/image/PlayerPotion.png").toExternalForm());
     Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
     Image firstlight = new Image(getClass().getResource("/image/firstlight.gif").toExternalForm());
+    Image wallimg = new Image(getClass().getResource("/image/dungeonwall.png").toExternalForm());
     ArrayList<Image> Roomimgs = new ArrayList<>();
     Rooms roomclass = new Rooms();
     Enemy enemyclass = new Enemy();
@@ -388,127 +147,17 @@ public class Controller {
         Roomimgs.add(roomimg8);
         Roomimgs.add(roomimg9);
 
-        walls.add(wall);
-        walls.add(wall2);
-        walls.add(wall3);
-        walls.add(wall4);
-        walls.add(wall5);
-        walls.add(wall6);
-        walls.add(wall7);
-        walls.add(wall8);
-        walls.add(wall9);
-        walls.add(wall10);
-        walls.add(wall11);
-        walls.add(wall12);
-        walls.add(wall13);
-        walls.add(wall14);
-        walls.add(wall15);
-        walls.add(wall16);
-        walls.add(wall17);
-        walls.add(wall18);
-        walls.add(wall19);
-        walls.add(wall20);
-        walls.add(wall21);
-        walls.add(wall22);
-        walls.add(wall23);
-        walls.add(wall24);
-        walls.add(wall25);
-        walls.add(wall26);
-        walls.add(wall27);
-        walls.add(wall28);
-        walls.add(wall29);
-        walls.add(wall30);
-        walls.add(wall31);
-        walls.add(wall32);
-        walls.add(wall33);
-        walls.add(wall34);
-        walls.add(wall35);
-        walls.add(wall36);
-        walls.add(wall37);
-        walls.add(wall38);
-        walls.add(wall39);
-        walls.add(wall40);
-        walls.add(wall41);
-        walls.add(wall42);
-        walls.add(wall43);
-        walls.add(wall44);
-        walls.add(wall45);
-        walls.add(wall46);
-        walls.add(wall47);
-        walls.add(wall48);
-        walls.add(wall49);
-        walls.add(wall50);
-        walls.add(wall51);
-        walls.add(wall52);
-        walls.add(wall53);
-        walls.add(wall54);
-        walls.add(wall55);
-        walls.add(wall56);
-        walls.add(wall57);
-        walls.add(wall58);
-        walls.add(wall59);
-        walls.add(wall60);
-        walls.add(wall61);
-        walls.add(wall62);
-        walls.add(wall63);
-        walls.add(wall64);
-        walls.add(wall65);
-        walls.add(wall66);
-        walls.add(wall67);
-        walls.add(wall68);
-        walls.add(wall69);
-        walls.add(wall70);
-        walls.add(wall71);
-        walls.add(wall72);
-        walls.add(wall73);
-        walls.add(wall74);
-        walls.add(wall75);
-        walls.add(wall76);
-        walls.add(wall77);
-        walls.add(wall78);
-        walls.add(wall79);
-        walls.add(wall80);
-        walls.add(wall81);
-        walls.add(wall82);
-        walls.add(wall83);
-        walls.add(wall84);
-        walls.add(wall85);
-        walls.add(wall86);
-        walls.add(wall87);
-        walls.add(wall88);
-        walls.add(wall89);
-        walls.add(wall90);
-        walls.add(wall91);
-        walls.add(wall92);
-        walls.add(wall93);
-        walls.add(wall94);
-        walls.add(wall95);
-        walls.add(wall96);
-        walls.add(wall97);
-        walls.add(wall98);
-        walls.add(wall99);
-        walls.add(wall100);
-        walls.add(wall101);
-        walls.add(wall102);
-        walls.add(wall103);
-        walls.add(wall104);
-        walls.add(wall105);
-        walls.add(wall106);
-        walls.add(wall107);
-        walls.add(wall108);
-        walls.add(wall109);
-        walls.add(wall110);
-        walls.add(wall111);
-        walls.add(wall112);
-        walls.add(wall113);
-        walls.add(wall114);
-        walls.add(wall115);
-        walls.add(wall116);
-        walls.add(wall117);
-        walls.add(wall118);
-        walls.add(wall119);
-        walls.add(wall120);
-        walls.add(wall121);
+        for (int i = 0; i < 121; i++){
+            walls.add(new ImageView());
+            background.getChildren().add(walls.get(i));
+            walls.get(i).toBack();
+            walls.get(i).setImage(wallimg);
+            walls.get(i).setFitHeight(64.0);
+            walls.get(i).setFitWidth(64.0);
+            walls.get(i).setPreserveRatio(true);
+            walls.get(i).setPickOnBounds(true);
+        }
+
 
 
         double darkx = -128;
@@ -589,8 +238,6 @@ public class Controller {
                 darknessunit.setFitHeight(64);
                 darknessunit.setFitWidth(64);
 
-                System.out.println(darkx + darkxadd);
-                System.out.println(darky + darkyadd);
                 darknessunit.setId("darkness" + k);
                 darkness.add(darknessunit);
                 background.getChildren().add(darknessunit);
@@ -600,7 +247,6 @@ public class Controller {
             }
             darkxadd = 0;
             darkyadd += 64;
-            System.out.println();
         }
 
 
@@ -716,8 +362,11 @@ public class Controller {
         }
     }
 
-    public void move(KeyEvent keyEvent) throws IOException, InterruptedException {
+    public void move(KeyEvent keyEvent) throws IOException {
 
+        if (roomclass.roomnr == 1){
+            roomclass.setstartroom(walls);
+        }
 
         System.out.println("Room Number:" + roomclass.roomnr + "   ENEMY ROOM   " + enemyclass.enemyroom + "     ENEMY DEAD   " + enemyclass.enemyroomdead);
         slimehealth = enemyclass.attack(hero, enemyclass.slime, freeslots, selected, slimehealth, keyEvent);
@@ -725,7 +374,6 @@ public class Controller {
         blobhealth = enemyclass.attack(hero, enemyclass.blob, freeslots, selected, blobhealth, keyEvent);
         if (slimehealth == 0) {
             enemyclass.slime.setX(6400);
-            // background.getChildren().remove(enemyclass.slime);
             enemyclass.enemyroomdead = roomclass.roomnr;
 
             if (lightcounter <= 69) {
@@ -736,7 +384,6 @@ public class Controller {
 
             if (!(enemyclass.enemyroom == roomclass.roomnr)) {
                 slimehealth = 4;
-                System.out.println("ENEMY FULL HEALTH");
             }
         }
         if (floaterhealth == 0) {
@@ -752,7 +399,6 @@ public class Controller {
 
             if (!(enemyclass.enemyroom == roomclass.roomnr)) {
                 floaterhealth = 4;
-                System.out.println("ENEMY FULL HEALTH");
             }
         }
         if (blobhealth == 0) {
@@ -769,7 +415,6 @@ public class Controller {
 
             if (!(enemyclass.enemyroom == roomclass.roomnr)) {
                 blobhealth = 6;
-                System.out.println("ENEMY FULL HEALTH");
             }
         }
 
@@ -806,7 +451,6 @@ public class Controller {
             stage.show();
         }
 
-        System.out.println(lightcounter);
         select(keyEvent);
         lightup(hero.getX(), hero.getY(), 0);
 
@@ -860,13 +504,11 @@ public class Controller {
                 if (roomclass.newroom) {
                     spawn(enemyclass.slime, walls, turn);
                 }
-                System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                 if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && floaterhealth == 4 && roomclass.roomnr % 2 == 0) {
                     turn += 2;
                     if (roomclass.newroom) {
                         spawn(enemyclass.floater, walls, turn);
                     }
-                    System.out.println("FLOATER");
 
                 } else {
                     enemyclass.floater.setX(770);
@@ -877,7 +519,6 @@ public class Controller {
                     if (roomclass.newroom) {
                         spawn(enemyclass.blob, walls, turn);
                     }
-                    System.out.println("BLOB");
 
                 } else {
                     enemyclass.blob.setX(770);
@@ -966,9 +607,7 @@ public class Controller {
             }
 
 
-            System.out.println("BOSS:  " + bossclass.boss.getX() + "    " + bossclass.boss.getY());
-            System.out.println("HERO:  " + hero.getX() + "    " + hero.getY());
-            if (bosshurt(hero, bossclass.boss)) {
+            if (bosshurt(hero)) {
                 if (lightcounter <= 10) {
                     health = enemyclass.hurt(healthbar, health, 10);
                 } else {
@@ -989,7 +628,6 @@ public class Controller {
             chestopened = false;
             roomclass.newroom = false;
 
-            System.out.println(chest.getX() + "CHEST" + chest.getY());
         }
 
 
@@ -1012,7 +650,8 @@ public class Controller {
         actioncloud.setTranslateX(hero.getX());
         actioncloud.setTranslateY(hero.getY());
 
-
+        System.out.println("Hero X: " + hero.getX());
+        System.out.println("Hero Y: " + hero.getY());
         System.out.println("Enemy X: " + enemyclass.slime.getX());
         System.out.println("Enemy Y: " + enemyclass.slime.getY());
         System.out.println("Enemy F X: " + enemyclass.floater.getX());
@@ -1103,7 +742,6 @@ public class Controller {
             enemyclass.blob.setFocusTraversable(true);
             enemyclass.enemyvision(enemyclass.blob, hero, lightcounter, blobhealth, "Blob");
             if (turn % 5 == 0) {
-                System.out.println(Arrays.toString(wallcollision(walls, enemyclass.blob)));
                 enemyclass.enemymove(hero, enemyclass.blob, background, wallcollision(walls, enemyclass.blob));
 
             }
@@ -1112,16 +750,13 @@ public class Controller {
 
         if (enemyclass.slime.getX() == hero.getX() && enemyclass.slime.getY() == hero.getY()) {
             health = enemyclass.hurt(healthbar, health, 1);
-            System.out.println(health);
         }
         if (enemyclass.floater.getX() == hero.getX() && enemyclass.floater.getY() == hero.getY()) {
             health = enemyclass.hurt(healthbar, health, 5);
-            System.out.println(health);
         }
 
         if (enemyclass.blob.getX() == hero.getX() && enemyclass.blob.getY() == hero.getY()) {
             health = enemyclass.hurt(healthbar, health, 10);
-            System.out.println(health);
         }
 
         if (roomclass.slimeinroom) {
@@ -1174,7 +809,6 @@ public class Controller {
                 fearenemy.setFitWidth(64.0);
                 spawn(fearenemy, walls, turn);
                 fearenemy.toFront();
-                System.out.println("FEAR ENEMY SPAWNED" + fearenemy.getX() + fearenemy.getY());
                 fearenemylist.add(fearenemy);
                 fearturn++;
 
@@ -1197,15 +831,12 @@ public class Controller {
                 fearenemylist.get(l).setVisible(false);
                 background.getChildren().remove(fearenemylist.get(l));
                 l++;
-                System.out.println("ENEMY REMOVED!!!!!");
             }
         }
 
 
         nrdec.setImage(Roomimgs.get((roomclass.roomnr - roomclass.roomnr % 10) / 10));
         nrzif.setImage(Roomimgs.get(roomclass.roomnr % 10));
-        System.out.println((roomclass.roomnr - (roomclass.roomnr % 10)) / 10);
-        System.out.println(roomclass.roomnr % 10);
 
 
         for (int slotcount = 0; slotcount < freeslots.length; slotcount++) {
@@ -1214,7 +845,6 @@ public class Controller {
             } else if (potionslots[slotcount]) {
                 freeslots[slotcount] = false;
             }
-            System.out.println(freeslots[slotcount] + " " + potionslots[slotcount]);
         }
 
         turn++;
@@ -1238,7 +868,7 @@ public class Controller {
 
     }
 
-    public boolean bosshurt(ImageView hero, ImageView boss) {
+    public boolean bosshurt(ImageView hero) {
         return (hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY()) ||
                 (hero.getX() == bossclass.boss.getX() + 64 && hero.getY() == bossclass.boss.getY()) ||
                 (hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY() + 64) ||
@@ -1287,10 +917,8 @@ public class Controller {
                 } else {
                     if (attackablefields[0]) {
                         fieldn.setImage(attackableimg);
-                        System.out.println("MONSTER IN N");
                     } else {
                         fieldn.setImage(imageavailable);
-                        System.out.println("SET AVAILABLE N");
                     }
                 }
             }
@@ -1303,10 +931,8 @@ public class Controller {
                 } else {
                     if (attackablefields[1]) {
                         fieldw.setImage(attackableimg);
-                        System.out.println("MONSTER IN W");
                     } else {
                         fieldw.setImage(imageavailable);
-                        System.out.println("SET AVAILABLE W");
                     }
                 }
             }
@@ -1319,10 +945,8 @@ public class Controller {
                 } else {
                     if (attackablefields[2]) {
                         fields.setImage(attackableimg);
-                        System.out.println("MONSTER IN S");
                     } else {
                         fields.setImage(imageavailable);
-                        System.out.println("SET AVAILABLE S");
                     }
                 }
             }
@@ -1335,10 +959,8 @@ public class Controller {
                 } else {
                     if (attackablefields[3]) {
                         fieldo.setImage(attackableimg);
-                        System.out.println("MONSTER IN O");
                     } else {
                         fieldo.setImage(imageavailable);
-                        System.out.println("SET AVAILABLE O");
                     }
                 }
             }
@@ -1363,10 +985,8 @@ public class Controller {
                     } else {
                         if (attackablefields[0]) {
                             fieldn.setImage(attackableimg);
-                            System.out.println("MONSTER IN N");
                         } else {
                             fieldn.setImage(imageavailable);
-                            System.out.println("SET AVAILABLE N");
                         }
                     }
                 }
@@ -1379,10 +999,8 @@ public class Controller {
                     } else {
                         if (attackablefields[1]) {
                             fieldw.setImage(attackableimg);
-                            System.out.println("MONSTER IN W");
                         } else {
                             fieldw.setImage(imageavailable);
-                            System.out.println("SET AVAILABLE W");
                         }
                     }
                 }
@@ -1395,10 +1013,8 @@ public class Controller {
                     } else {
                         if (attackablefields[2]) {
                             fields.setImage(attackableimg);
-                            System.out.println("MONSTER IN S");
                         } else {
                             fields.setImage(imageavailable);
-                            System.out.println("SET AVAILABLE S");
                         }
                     }
                 }
@@ -1411,10 +1027,8 @@ public class Controller {
                     } else {
                         if (attackablefields[3]) {
                             fieldo.setImage(attackableimg);
-                            System.out.println("MONSTER IN O");
                         } else {
                             fieldo.setImage(imageavailable);
-                            System.out.println("SET AVAILABLE O");
                         }
                     }
                 }
@@ -1425,7 +1039,6 @@ public class Controller {
 
     public int[] wallcollision(ArrayList<ImageView> wall, ImageView hero) {
 
-        int[] availablemovement = new int[4];
         int[] walltot = new int[4];
         walltot[0] = 1;
         walltot[1] = 1;
@@ -1433,39 +1046,23 @@ public class Controller {
         walltot[3] = 1;
         for (int i = 0; i < wall.size(); i++) {
             if (walltot[0] != 0) {
-                if (hero.getY() != wall.get(i).getY() + 64 || hero.getX() != wall.get(i).getX()) {
-                    availablemovement[0] = 1;
-
-                } else {
-                    availablemovement[0] = 0;
+                if (!(hero.getY() != wall.get(i).getY() + 64 || hero.getX() != wall.get(i).getX())) {
                     walltot[0] = 0;
                 }
             }
 
             if (walltot[1] != 0) {
-                if (hero.getY() != wall.get(i).getY() || hero.getX() != wall.get(i).getX() + 64) {
-                    availablemovement[1] = 2;
-
-                } else {
-                    availablemovement[1] = 0;
+                if (!(hero.getY() != wall.get(i).getY() || hero.getX() != wall.get(i).getX() + 64)) {
                     walltot[1] = 0;
                 }
             }
-
             if (walltot[2] != 0) {
-                if (hero.getY() + 64 != wall.get(i).getY() || hero.getX() != wall.get(i).getX()) {
-                    availablemovement[2] = 3;
-
-                } else {
-                    availablemovement[2] = 0;
+                if (!(hero.getY() + 64 != wall.get(i).getY() || hero.getX() != wall.get(i).getX())) {
                     walltot[2] = 0;
                 }
             }
             if (walltot[3] != 0) {
-                if (hero.getY() != wall.get(i).getY() || hero.getX() != wall.get(i).getX() - 64) {
-                    availablemovement[3] = 4;
-                } else {
-                    availablemovement[3] = 0;
+                if (!(hero.getY() != wall.get(i).getY() || hero.getX() != wall.get(i).getX() - 64)) {
                     walltot[3] = 0;
                 }
             }
@@ -1477,7 +1074,6 @@ public class Controller {
         switch (lightlevel) {
             case 0:
                 for (int i = 0; i < darkness.size(); i++) {
-
                     darkness.get(i).setOpacity(0.8);
                 }
                 break;
@@ -1560,10 +1156,7 @@ public class Controller {
 
     public void spawn(ImageView entity, ArrayList<ImageView> walls, int turn) {
 
-
         Random rand = new Random();
-        System.out.println(turn + "TUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUURRRRRRRNNNNN!!!!");
-
         boolean wallfound;
         boolean locationavailable;
         double entityX;
@@ -1604,12 +1197,6 @@ public class Controller {
                 hero.setY(hero.getY() - 64);
                 y -= 64;
 
-                System.out.println("up");
-                System.out.println("Y: " + hero.getY());
-                System.out.println("X: " + hero.getX());
-                System.out.println();
-
-
                 if (lightcounter > 0) {
                     lightcounter--;
                 } else {
@@ -1626,10 +1213,6 @@ public class Controller {
                 hero.setX(hero.getX() - 64);
                 x -= 64;
 
-                System.out.println("left");
-                System.out.println("Y: " + hero.getY());
-                System.out.println("X: " + hero.getX());
-                System.out.println();
 
                 if (lightcounter > 0) {
                     lightcounter--;
@@ -1646,11 +1229,6 @@ public class Controller {
                 hero.setY(hero.getY() + 64);
                 y += 64;
 
-                System.out.println("down");
-                System.out.println("Y: " + hero.getY());
-                System.out.println("X: " + hero.getX());
-                System.out.println();
-
                 if (lightcounter > 0) {
                     lightcounter--;
                 } else {
@@ -1664,10 +1242,6 @@ public class Controller {
             if (availablemovement[3] != 0) {
                 hero.setX(hero.getX() + 64);
                 x += 64;
-                System.out.println("right");
-                System.out.println("Y: " + hero.getY());
-                System.out.println("X: " + hero.getX());
-                System.out.println();
 
 
                 if (lightcounter > 0) {

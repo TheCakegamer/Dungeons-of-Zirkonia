@@ -186,6 +186,8 @@ public class Rooms {
 
     }
 
+
+
     private void changeroomfromS(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
         int generate = rand.nextInt((13 - 1) + 1) + 1;
@@ -447,6 +449,11 @@ public class Rooms {
             walls.get(i).setLayoutY(128);
             walls.get(i).setLayoutX(128);
         }
+    }
+
+    public void setstartroom(ArrayList<ImageView> walls){
+
+        activateroomchange(walls,r.setroomstart(false),r.setroomstart(true));
     }
 }
 

@@ -8,7 +8,7 @@
     -fx-background-image: url("../image/dungeonground-1-dark.png");
     -fx-background-repeat: repeat;
     -fx-background-size: 64px;
-    -fx-background-insets:0;
+    -fx-background-insets: 0;
     -fx-border-radius: 20;
 }
 

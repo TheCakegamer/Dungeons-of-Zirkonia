@@ -534,6 +534,29 @@ public class RoomList {
         return buildroom(X,Y,room,setY);
     }
 
+    public ArrayList<Double> setroomstart(boolean setY){
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
+
+        int[][] room ={
+                {1,1,1,1,1,1,1,1,1,1,1},
+                {1,0,0,0,1,1,1,1,1,1,1},
+                {1,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,1,1,1,1,1,0,1},
+                {1,1,1,1,1,1,1,1,1,0,1},
+                {1,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,1},
+                {1,0,0,0,0,0,0,0,0,0,1},
+                {1,1,1,1,1,0,1,1,1,1,1}
+
+        };
+
+
+        return buildroom(X,Y,room,setY);
+    }
+
     private ArrayList<Double> buildroom(ArrayList<Double> roomX, ArrayList<Double> roomY, int[][] roomBase, boolean setY){
         int y=-2;
         for (int i = 0; i <= 10; i++) {
