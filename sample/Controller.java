@@ -520,8 +520,6 @@ public class Controller {
         enemyclass.blob.setX(770);
 
 
-
-
         for (int m = 1; m <= 9; m++) {
             ImageView slot = new ImageView();
 
@@ -604,7 +602,6 @@ public class Controller {
             darkyadd += 64;
             System.out.println();
         }
-
 
 
     }
@@ -794,7 +791,7 @@ public class Controller {
             firstroom = false;
         }
 
-        if (keyEvent.getCharacter().equals("x")){
+        if (keyEvent.getCharacter().equals("x")) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
 
             Parent GO;
@@ -852,20 +849,23 @@ public class Controller {
 
 
         movement(wallcollision(walls, hero), keyEvent);
-
-
+        roomclass.newroom = false;
         roomclass.changeroom(hero, walls, roomORX, roomORY, background, controlls);
+
 
         if (roomclass.roomnr < 50) {
             if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth == 4) {
 
                 turn++;
-                spawn(enemyclass.slime, walls, turn);
-
+                if (roomclass.newroom) {
+                    spawn(enemyclass.slime, walls, turn);
+                }
                 System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                 if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && floaterhealth == 4 && roomclass.roomnr % 2 == 0) {
-                    turn++;
-                    spawn(enemyclass.floater, walls, turn);
+                    turn += 2;
+                    if (roomclass.newroom) {
+                        spawn(enemyclass.floater, walls, turn);
+                    }
                     System.out.println("FLOATER");
 
                 } else {
@@ -873,8 +873,10 @@ public class Controller {
                     floaterhealth = 4;
                 }
                 if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && blobhealth == 6 && roomclass.roomnr % 5 == 0) {
-                    turn++;
-                    spawn(enemyclass.blob, walls, turn);
+                    turn += 4;
+                    if (roomclass.newroom) {
+                        spawn(enemyclass.blob, walls, turn);
+                    }
                     System.out.println("BLOB");
 
                 } else {
@@ -884,6 +886,7 @@ public class Controller {
                 enemyclass.enemyroom++;
             } else {
                 if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth != 4) {
+                    turn++;
                     slimehealth = 4;
                     spawn(enemyclass.slime, walls, turn);
                 }
@@ -1017,7 +1020,7 @@ public class Controller {
         System.out.println("Enemy B X: " + enemyclass.blob.getX());
         System.out.println("Enemy B Y: " + enemyclass.blob.getY());
 
-        if(roomclass.roomnr == 2){
+        if (roomclass.roomnr == 2) {
             background.getChildren().remove(firstlightimgv);
         }
 
@@ -1068,8 +1071,6 @@ public class Controller {
             lightmeter.setImage(light0);
 
         }
-
-
 
 
         fearmetercheck(fear);
@@ -1178,11 +1179,21 @@ public class Controller {
                 fearturn++;
 
 
+
+
             } else {
                 fearturn++;
+                for (int i = 0; i < fearenemylist.size(); i++) {
+                    enemyclass.enemymove(hero, fearenemylist.get(i), background, wallcollision(walls, fearenemylist.get(i)));
+                }
             }
         }
         if (lightcounter > 0 && fearenemylist.size() > 0) {
+
+            for (int i = 0; i < fearenemylist.size(); i++) {
+               fearenemylist.get(i).setOpacity(0.3);
+            }
+
 
             if (l < fearenemylist.size()) {
                 fearenemylist.get(l).setVisible(false);
@@ -1192,8 +1203,6 @@ public class Controller {
             }
         }
 
-
-        //INSERT ROOM NR AIKA
 
         nrdec.setImage(Roomimgs.get((roomclass.roomnr - roomclass.roomnr % 10) / 10));
         nrzif.setImage(Roomimgs.get(roomclass.roomnr % 10));
@@ -1552,62 +1561,39 @@ public class Controller {
 
 
     public void spawn(ImageView entity, ArrayList<ImageView> walls, int turn) {
+
+
         Random rand = new Random();
         System.out.println(turn + "TUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUURRRRRRRNNNNN!!!!");
 
-        if (turn % 3 == 0) {
-            for (int i = -1; i <= 7; i++) {
-                int k = 0;
-                entity.setY(turn % 7 * 64.0);
-                for (int j = -1; j <= 7; j++) {
-                    entity.setX(j * 64.0);
+        boolean wallfound;
+        boolean locationavailable;
+        double entityX;
+        double entityY;
 
-                    if (entity.getX() != walls.get(k).getX() && entity.getY() != walls.get(k).getY() && entity.getY() != -128 && entity.getY() != 512 && entity.getX() != -128 && entity.getX() != 512) {
-                        System.out.println("NOT IN WALL NR " + k + " AT " + walls.get(k).getX() + " " + walls.get(k).getY());
-                        System.out.println("ENEMY NEW X" + entity.getX() + "  ENEMY NEW Y " + entity.getY() + "FINAL!!!!");
-                        int generatednumb = rand.nextInt((100 - 1) + 1) + 1;
-                        if (generatednumb % 2 != 0) {
-                            return;
-                        } else {
-                            k++;
-                            i++;
+        do {
+            wallfound = false;
+            locationavailable = false;
+            entityX = ((rand.nextInt(8) - 1) * 64);
+            entityY = ((rand.nextInt(8) - 1) * 64);
 
-                        }
-                    } else {
-                        System.out.println("ENEMY NEW X" + entity.getX() + "  ENEMY NEW Y " + entity.getY());
-                        k++;
-                        i++;
+            for (int i = 0; i < walls.size(); i++) {
+                    if (entityY == walls.get(i).getY() && entityX == walls.get(i).getX()) {
+                        wallfound = true;
+                }else if (entityY != walls.get(i).getY() && entityX != walls.get(i).getX() && !wallfound){
+                       locationavailable = true;
+                    }else if (wallfound){
+                        locationavailable = false;
                     }
-
-                }
-
-
             }
-        } else {
-            for (int i = 7; i >= -1; i--) {
-                int k = 120;
-                entity.setY(turn % 7 * 64.0);
-                for (int j = 7; j >= -1; j--) {
-                    entity.setX(j * 64.0);
-                    if (entity.getX() != walls.get(k).getX() && entity.getY() != walls.get(k).getY() && entity.getY() != -128 && entity.getY() != 512 && entity.getX() != -128 && entity.getX() != 512) {
-                        int generatednumb = rand.nextInt((100 - 1) + 1) + 1;
-                        if (generatednumb % 2 == 0) {
-                            return;
-                        } else {
-                            k--;
-
-                        }
-                    } else {
-                        System.out.println("ENEMY NEW X" + entity.getX() + "  ENEMY NEW Y " + entity.getY());
-                        k--;
-                        i--;
-                    }
-
-                }
 
 
-            }
-        }
+        } while (!locationavailable);
+
+        entity.setX(entityX);
+        entity.setY(entityY);
+
+
     }
 
 
