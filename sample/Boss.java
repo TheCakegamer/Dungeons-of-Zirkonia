@@ -12,76 +12,56 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Boss {
-    boolean bossspawned = false;
+    private boolean bossspawned = false;
     ImageView boss = new ImageView();
     ImageView bosshealthbar = new ImageView();
     int bosshealth = 20;
+    private Enemy enemyclass = new Enemy();
 
     Image bossimg = new Image(getClass().getResource("/image/stonemask.gif").toExternalForm());
     Image suckimg = new Image(getClass().getResource("/image/stonemasklightsuck.gif").toExternalForm());
-    Image bossh20 = new Image(getClass().getResource("/image/bossh20.png").toExternalForm());
-    Image bossh19 = new Image(getClass().getResource("/image/bossh19.png").toExternalForm());
-    Image bossh18 = new Image(getClass().getResource("/image/bossh18.png").toExternalForm());
-    Image bossh17 = new Image(getClass().getResource("/image/bossh17.png").toExternalForm());
-    Image bossh16 = new Image(getClass().getResource("/image/bossh16.png").toExternalForm());
-    Image bossh15 = new Image(getClass().getResource("/image/bossh15.png").toExternalForm());
-    Image bossh14 = new Image(getClass().getResource("/image/bossh14.png").toExternalForm());
-    Image bossh13 = new Image(getClass().getResource("/image/bossh13.png").toExternalForm());
-    Image bossh12 = new Image(getClass().getResource("/image/bossh12.png").toExternalForm());
-    Image bossh11 = new Image(getClass().getResource("/image/bossh11.png").toExternalForm());
-    Image bossh10 = new Image(getClass().getResource("/image/bossh10.png").toExternalForm());
-    Image bossh09 = new Image(getClass().getResource("/image/bossh09.png").toExternalForm());
-    Image bossh08 = new Image(getClass().getResource("/image/bossh08.png").toExternalForm());
-    Image bossh07 = new Image(getClass().getResource("/image/bossh07.png").toExternalForm());
-    Image bossh06 = new Image(getClass().getResource("/image/bossh06.png").toExternalForm());
-    Image bossh05 = new Image(getClass().getResource("/image/bossh05.png").toExternalForm());
-    Image bossh04 = new Image(getClass().getResource("/image/bossh04.png").toExternalForm());
-    Image bossh03 = new Image(getClass().getResource("/image/bossh03.png").toExternalForm());
-    Image bossh02 = new Image(getClass().getResource("/image/bossh02.png").toExternalForm());
-    Image bossh01 = new Image(getClass().getResource("/image/bossh01.png").toExternalForm());
-    Image bossh00 = new Image(getClass().getResource("/image/bossh00.png").toExternalForm());
 
-    ArrayList<Image> bhealthimg = new ArrayList<>();
 
-    public void initialize() {
-        bhealthimg.add(bossh00);
-        bhealthimg.add(bossh01);
-        bhealthimg.add(bossh02);
-        bhealthimg.add(bossh03);
-        bhealthimg.add(bossh04);
-        bhealthimg.add(bossh05);
-        bhealthimg.add(bossh06);
-        bhealthimg.add(bossh07);
-        bhealthimg.add(bossh08);
-        bhealthimg.add(bossh09);
-        bhealthimg.add(bossh10);
-        bhealthimg.add(bossh11);
-        bhealthimg.add(bossh12);
-        bhealthimg.add(bossh13);
-        bhealthimg.add(bossh14);
-        bhealthimg.add(bossh15);
-        bhealthimg.add(bossh16);
-        bhealthimg.add(bossh17);
-        bhealthimg.add(bossh18);
-        bhealthimg.add(bossh19);
-        bhealthimg.add(bossh20);
+    private ArrayList<Image> bhealthimg = new ArrayList<>();
+
+    private void addbosspics() {
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh00.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh01.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh02.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh03.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh04.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh05.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh06.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh07.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh08.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh09.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh10.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh11.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh12.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh13.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh14.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh15.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh16.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh17.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh18.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh19.png").toExternalForm()));
+        bhealthimg.add(new Image(getClass().getResource("/image/bossh20.png").toExternalForm()));
     }
 
 
-    public int suckattack(int lightcounter, ImageView boss) {
+    public int suckattack(ImageView boss) {
         boss.setImage(suckimg);
-        lightcounter = 0;
         if (bosshealth <= 15) {
             bosshealth += 5;
         } else {
             bosshealth = 20;
         }
 
-        return lightcounter;
+        return 0;
     }
 
     public void updatehealthbar(int bosshealth) {
-        initialize();
+        addbosspics();
         bosshealthbar.setImage(bhealthimg.get(bosshealth));
     }
 
@@ -107,7 +87,7 @@ public class Boss {
     public void bossmove(ImageView hero, ImageView enemy, Pane background, int[] availablemovement) {
         if (
                 !bossspawned) {
-            initialize();
+            addbosspics();
             background.getChildren().add(boss);
             background.getChildren().add(bosshealthbar);
             boss.setImage(bossimg);
@@ -129,30 +109,8 @@ public class Boss {
 
 
         enemy.setFocusTraversable(true);
-        if (Math.abs(hero.getX() - enemy.getX()) > Math.abs(hero.getY() - enemy.getY())) {
-            if (hero.getX() > enemy.getX()) {
-                if (availablemovement[3] != 0) {
-                    enemy.setX(enemy.getX() + 64);
-                }
-            } else if (hero.getX() < enemy.getX()) {
-                if (availablemovement[1] != 0) {
-                    enemy.setX(enemy.getX() - 64);
-                }
 
-            }
-        } else if (Math.abs(hero.getX() - enemy.getX()) <= Math.abs(hero.getY() - enemy.getY())) {
-            if (hero.getY() > enemy.getY()) {
-                if (availablemovement[2] != 0) {
-                    enemy.setY(enemy.getY() + 64);
-                }
-
-            } else if (hero.getY() < enemy.getY()) {
-                if (availablemovement[0] != 0) {
-                    enemy.setY(enemy.getY() - 64);
-                }
-
-            }
-        }
+        enemyclass.setenemydirection(hero, enemy, availablemovement);
 
 
         enemy.setTranslateX(128);

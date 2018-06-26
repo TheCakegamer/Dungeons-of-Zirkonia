@@ -52,4 +52,4 @@ public class Menu {
     private void requestExit() {
         System.exit(1);
     }
-    }
+}

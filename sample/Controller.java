@@ -740,7 +740,7 @@ public class Controller {
             }
         }
         if (floaterhealth == 0) {
-            enemyclass.floater.setImage(enemyclass.floater0img);
+            enemyclass.floater.setImage(enemyclass.floaterimg);
             enemyclass.floater.setX(6400);
             enemyclass.enemyroomdead = roomclass.roomnr;
 
@@ -756,7 +756,7 @@ public class Controller {
             }
         }
         if (blobhealth == 0) {
-            enemyclass.blob.setImage(enemyclass.blob0img);
+            enemyclass.blob.setImage(enemyclass.blobimg);
             enemyclass.blob.setX(6400);
             enemyclass.enemyroomdead = roomclass.roomnr;
 
@@ -850,7 +850,7 @@ public class Controller {
 
         movement(wallcollision(walls, hero), keyEvent);
         roomclass.newroom = false;
-        roomclass.changeroom(hero, walls, roomORX, roomORY, background, controlls);
+        roomclass.changeroom(hero, walls, background, controlls);
 
 
         if (roomclass.roomnr < 50) {
@@ -916,7 +916,7 @@ public class Controller {
                     }
                 }
                 if (charge == 3 && !cancelsuck) {
-                    lightcounter = bossclass.suckattack(lightcounter, bossclass.boss);
+                    lightcounter = bossclass.suckattack( bossclass.boss);
                     health -= 5;
                     bossclass.boss.setImage(bossclass.bossimg);
                     charge = 0;
@@ -1179,8 +1179,6 @@ public class Controller {
                 fearturn++;
 
 
-
-
             } else {
                 fearturn++;
                 for (int i = 0; i < fearenemylist.size(); i++) {
@@ -1191,7 +1189,7 @@ public class Controller {
         if (lightcounter > 0 && fearenemylist.size() > 0) {
 
             for (int i = 0; i < fearenemylist.size(); i++) {
-               fearenemylist.get(i).setOpacity(0.3);
+                fearenemylist.get(i).setOpacity(0.3);
             }
 
 
@@ -1578,13 +1576,13 @@ public class Controller {
             entityY = ((rand.nextInt(8) - 1) * 64);
 
             for (int i = 0; i < walls.size(); i++) {
-                    if (entityY == walls.get(i).getY() && entityX == walls.get(i).getX()) {
-                        wallfound = true;
-                }else if (entityY != walls.get(i).getY() && entityX != walls.get(i).getX() && !wallfound){
-                       locationavailable = true;
-                    }else if (wallfound){
-                        locationavailable = false;
-                    }
+                if (entityY == walls.get(i).getY() && entityX == walls.get(i).getX()) {
+                    wallfound = true;
+                } else if (entityY != walls.get(i).getY() && entityX != walls.get(i).getX() && !wallfound) {
+                    locationavailable = true;
+                } else if (wallfound) {
+                    locationavailable = false;
+                }
             }
 
 

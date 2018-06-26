@@ -8,7 +8,7 @@ import javafx.scene.layout.Pane;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Rooms{
+public class Rooms {
 
     int roomnr = 1;
     boolean newroom = false;
@@ -21,22 +21,19 @@ public class Rooms{
     RoomList r = new RoomList();
 
 
-
-
-
-    public void changeroom(javafx.scene.image.ImageView hero, ArrayList<javafx.scene.image.ImageView> walls, ArrayList<Double> roomORX, ArrayList<Double> roomORY, Pane background, ImageView controlls){
+    public void changeroom(javafx.scene.image.ImageView hero, ArrayList<javafx.scene.image.ImageView> walls, Pane background, ImageView controlls) {
 
 
         //North to South
-        if (hero.getX() == (3*64) && hero.getY() == (-3*64)){
+        if (hero.getX() == (3 * 64) && hero.getY() == (-3 * 64)) {
 
             hero.setY(512);
             hero.setLayoutY(0);
-            changeroomfromS(walls, roomORX,roomORY);
+            changeroomfromS(walls);
             if (!lastroom.equals("N")) {
                 roomnr++;
             }
-            enemyclass.enemyroom = roomnr-1;
+            enemyclass.enemyroom = roomnr - 1;
             enemyclass.enemyroomdead = roomnr;
            /* if(roomnr == enemyclass.enemyroom){
                 enemyclass.slime.setX(320);
@@ -50,11 +47,9 @@ public class Rooms{
             lastroom = "S";
 
 
-
-
         }
         //South to North
-        else if (hero.getX() == (3*64) && hero.getY() == (9*64)){
+        else if (hero.getX() == (3 * 64) && hero.getY() == (9 * 64)) {
 
 
             hero.setY(-128);
@@ -65,7 +60,7 @@ public class Rooms{
             if (!lastroom.equals("S")) {
                 roomnr++;
             }
-            enemyclass.enemyroom = roomnr-1;
+            enemyclass.enemyroom = roomnr - 1;
             enemyclass.enemyroomdead = roomnr;
             newroom = true;
             slimeinroom = true;
@@ -74,14 +69,14 @@ public class Rooms{
             lastroom = "N";
         }
         //West to East
-        else if (hero.getX() == (-3*64) && hero.getY() == (3*64)){
+        else if (hero.getX() == (-3 * 64) && hero.getY() == (3 * 64)) {
             hero.setX(512);
             hero.setLayoutY(0);
             changeroomfromO(walls);
             if (!lastroom.equals("W")) {
                 roomnr++;
             }
-            enemyclass.enemyroom = roomnr-1;
+            enemyclass.enemyroom = roomnr - 1;
             enemyclass.enemyroomdead = roomnr;
             newroom = true;
             slimeinroom = true;
@@ -90,14 +85,14 @@ public class Rooms{
             lastroom = "O";
         }
         //East to West
-        else if (hero.getX() == (9*64) && hero.getY() == (3*64)){
+        else if (hero.getX() == (9 * 64) && hero.getY() == (3 * 64)) {
             hero.setX(-128);
             hero.setLayoutY(0);
             changeroomfromW(walls);
             if (!lastroom.equals("O")) {
                 roomnr++;
             }
-            enemyclass.enemyroom = roomnr-1;
+            enemyclass.enemyroom = roomnr - 1;
             enemyclass.enemyroomdead = roomnr;
             newroom = true;
             slimeinroom = true;
@@ -110,7 +105,7 @@ public class Rooms{
 
     private void changeroomfromN(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
-        int generate = rand.nextInt((14 - 1) + 1) + 1;
+        int generate = rand.nextInt((15 - 1) + 1) + 1;
         ArrayList<Double> roomNX;
         ArrayList<Double> roomNY;
         if (roomnr < 49) {
@@ -171,9 +166,13 @@ public class Rooms{
                     roomNX = r.setroomNOW2(false);
                     roomNY = r.setroomNOW2(true);
                     break;
+                case 15:
+                    roomNX = r.setroomNOW2(false);
+                    roomNY = r.setroomNOW2(true);
+                    break;
                 default:
-                    roomNX = r.setroomNO(false);
-                    roomNY = r.setroomNO(true);
+                    roomNX = r.setroomNSW2(false);
+                    roomNY = r.setroomNSW2(true);
                     break;
             }
         } else {
@@ -182,22 +181,14 @@ public class Rooms{
         }
 
 
-
-
-        for (int i = 0; i< roomNX.size(); i++){
-            walls.get(i).setX(roomNX.get(i));
-            walls.get(i).setY(roomNY.get(i));
-            walls.get(i).setLayoutY(128);
-            walls.get(i).setLayoutX(128);
-        }
-
-
+        activateroomchange(walls, roomNX, roomNY);
 
 
     }
-    private void changeroomfromS(ArrayList<javafx.scene.image.ImageView> walls, ArrayList<Double> roomORX,ArrayList<Double> roomORY) {
+
+    private void changeroomfromS(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
-        int generate = rand.nextInt((12 - 1) + 1) + 1;
+        int generate = rand.nextInt((13 - 1) + 1) + 1;
         ArrayList<Double> roomSX;
         ArrayList<Double> roomSY;
         if (roomnr < 49) {
@@ -250,29 +241,28 @@ public class Rooms{
                     roomSX = r.setroomOSW2(false);
                     roomSY = r.setroomOSW2(true);
                     break;
+                case 13:
+                    roomSX = r.setroomNSW2(false);
+                    roomSY = r.setroomNSW2(true);
+                    break;
 
                 default:
                     roomSX = r.setroomOSW(false);
                     roomSY = r.setroomOSW(true);
                     break;
             }
-        }else {
+        } else {
             roomSX = r.setBoss(false);
             roomSY = r.setBoss(true);
         }
 
-        for (int i = 0; i < roomSX.size(); i++) {
-            walls.get(i).setX(roomSX.get(i));
-            walls.get(i).setY(roomSY.get(i));
-            walls.get(i).setLayoutY(128);
-            walls.get(i).setLayoutX(128);
-        }
+        activateroomchange(walls, roomSX, roomSY);
 
     }
 
-    private  void changeroomfromW(ArrayList<javafx.scene.image.ImageView> walls) {
+    private void changeroomfromW(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
-        int generate = rand.nextInt((15 - 1) + 1) + 1;
+        int generate = rand.nextInt((16 - 1) + 1) + 1;
         ArrayList<Double> roomWX;
         ArrayList<Double> roomWY;
 
@@ -338,29 +328,26 @@ public class Rooms{
                     roomWX = r.setroomOW4(false);
                     roomWY = r.setroomOW4(true);
                     break;
+                case 16:
+                    roomWX = r.setroomNSW2(false);
+                    roomWY = r.setroomNSW2(true);
+                    break;
 
                 default:
                     roomWX = r.setroomNsw(false);
                     roomWY = r.setroomNsw(true);
                     break;
             }
-        }else  {
+        } else {
             roomWX = r.setBoss(false);
             roomWY = r.setBoss(true);
         }
 
 
-        for (int i = 0; i< roomWX.size(); i++){
-            walls.get(i).setX(roomWX.get(i));
-            System.out.println(roomWX.get(i));
-            walls.get(i).setY(roomWY.get(i));
-            System.out.println(roomWY.get(i));
-            walls.get(i).setLayoutY(128);
-            walls.get(i).setLayoutX(128);
-        }
+        activateroomchange(walls, roomWX, roomWY);
     }
 
-    private  void changeroomfromO(ArrayList<javafx.scene.image.ImageView> walls) {
+    private void changeroomfromO(ArrayList<javafx.scene.image.ImageView> walls) {
         Random rand = new Random();
         int generate = rand.nextInt((18 - 1) + 1) + 1;
         ArrayList<Double> roomOX;
@@ -444,17 +431,19 @@ public class Rooms{
                     roomOY = r.setroomNOS(true);
                     break;
             }
-        }else {
+        } else {
             roomOX = r.setBoss(false);
             roomOY = r.setBoss(true);
         }
 
 
-        for (int i = 0; i< roomOX.size(); i++){
-            walls.get(i).setX(roomOX.get(i));
-            System.out.println(roomOX.get(i));
-            walls.get(i).setY(roomOY.get(i));
-            System.out.println(roomOY.get(i));
+        activateroomchange(walls, roomOX, roomOY);
+    }
+
+    public void activateroomchange(ArrayList<ImageView> walls, ArrayList<Double> roomX, ArrayList<Double> roomY) {
+        for (int i = 0; i < roomX.size(); i++) {
+            walls.get(i).setX(roomX.get(i));
+            walls.get(i).setY(roomY.get(i));
             walls.get(i).setLayoutY(128);
             walls.get(i).setLayoutX(128);
         }

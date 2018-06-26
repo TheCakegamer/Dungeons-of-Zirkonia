@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class RoomList {
 
     public ArrayList<Double> setroomNO(boolean setY){
-        ArrayList<Double> roomNOX = new ArrayList<Double>();
-        ArrayList<Double> roomNOY = new ArrayList<Double>();
+        ArrayList<Double> roomNOX = new ArrayList<>();
+        ArrayList<Double> roomNOY = new ArrayList<>();
 
         int[][] roomNO ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -28,8 +28,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNsw(boolean setY){
-        ArrayList<Double> roomNSWX = new ArrayList<Double>();
-        ArrayList<Double> roomNSWY = new ArrayList<Double>();
+        ArrayList<Double> roomNSWX = new ArrayList<>();
+        ArrayList<Double> roomNSWY = new ArrayList<>();
 
         int[][] roomNSW ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -51,8 +51,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNW(boolean setY){
-        ArrayList<Double> roomNWX = new ArrayList<Double>();
-        ArrayList<Double> roomNWY = new ArrayList<Double>();
+        ArrayList<Double> roomNWX = new ArrayList<>();
+        ArrayList<Double> roomNWY = new ArrayList<>();
 
         int[][] roomNW ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -74,8 +74,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOS(boolean setY){
-        ArrayList<Double> roomNOSX = new ArrayList<Double>();
-        ArrayList<Double> roomNOSY = new ArrayList<Double>();
+        ArrayList<Double> roomNOSX = new ArrayList<>();
+        ArrayList<Double> roomNOSY = new ArrayList<>();
 
         int[][] roomNOS ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -97,8 +97,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomOW(boolean setY){
-        ArrayList<Double> roomOWX = new ArrayList<Double>();
-        ArrayList<Double> roomOWSY = new ArrayList<Double>();
+        ArrayList<Double> roomOWX = new ArrayList<>();
+        ArrayList<Double> roomOWSY = new ArrayList<>();
 
         int[][] roomOW ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -121,8 +121,8 @@ public class RoomList {
 
 
     public ArrayList<Double> setroomNOS2(boolean setY){
-        ArrayList<Double> roomNOSX = new ArrayList<Double>();
-        ArrayList<Double> roomNOSY = new ArrayList<Double>();
+        ArrayList<Double> roomNOSX = new ArrayList<>();
+        ArrayList<Double> roomNOSY = new ArrayList<>();
 
         int[][] roomNOS ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -144,8 +144,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOW(boolean setY){
-        ArrayList<Double> roomNOWX = new ArrayList<Double>();
-        ArrayList<Double> roomNOWSY = new ArrayList<Double>();
+        ArrayList<Double> roomNOWX = new ArrayList<>();
+        ArrayList<Double> roomNOWSY = new ArrayList<>();
 
         int[][] roomNOW ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -167,8 +167,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomOSW(boolean setY){
-        ArrayList<Double> roomOSWX = new ArrayList<Double>();
-        ArrayList<Double> roomOSWY = new ArrayList<Double>();
+        ArrayList<Double> roomOSWX = new ArrayList<>();
+        ArrayList<Double> roomOSWY = new ArrayList<>();
 
         int[][] roomOSW ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -190,8 +190,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setBoss(boolean setY){
-        ArrayList<Double> roomBossX = new ArrayList<Double>();
-        ArrayList<Double> roomBossY = new ArrayList<Double>();
+        ArrayList<Double> roomBossX = new ArrayList<>();
+        ArrayList<Double> roomBossY = new ArrayList<>();
 
         int[][] roomBoss ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -213,8 +213,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOSW(boolean setY){
-        ArrayList<Double> NOSWX = new ArrayList<Double>();
-        ArrayList<Double> NOSWY = new ArrayList<Double>();
+        ArrayList<Double> NOSWX = new ArrayList<>();
+        ArrayList<Double> NOSWY = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -236,8 +236,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNO2(boolean setY){
-        ArrayList<Double> NOX = new ArrayList<Double>();
-        ArrayList<Double> NOY = new ArrayList<Double>();
+        ArrayList<Double> NOX = new ArrayList<>();
+        ArrayList<Double> NOY = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -259,8 +259,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOW2(boolean setY){
-        ArrayList<Double> NOWX = new ArrayList<Double>();
-        ArrayList<Double> NOWY = new ArrayList<Double>();
+        ArrayList<Double> NOWX = new ArrayList<>();
+        ArrayList<Double> NOWY = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -282,8 +282,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOSW2(boolean setY){
-        ArrayList<Double> NOSWX = new ArrayList<Double>();
-        ArrayList<Double> NOSWY = new ArrayList<Double>();
+        ArrayList<Double> NOSWX = new ArrayList<>();
+        ArrayList<Double> NOSWY = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -305,8 +305,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNS(boolean setY){
-        ArrayList<Double> NSX = new ArrayList<Double>();
-        ArrayList<Double> NSY = new ArrayList<Double>();
+        ArrayList<Double> NSX = new ArrayList<>();
+        ArrayList<Double> NSY = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -328,8 +328,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomOSW2(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -351,8 +351,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomOW2(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -374,8 +374,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOSW3(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -397,8 +397,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOSW4(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -420,8 +420,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOS3(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -443,8 +443,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomOW3(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -466,8 +466,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomOW4(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,1,1,1,1,1,1},
@@ -489,8 +489,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNOSW5(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -512,8 +512,8 @@ public class RoomList {
     }
 
     public ArrayList<Double> setroomNSW2(boolean setY){
-        ArrayList<Double> X = new ArrayList<Double>();
-        ArrayList<Double> Y = new ArrayList<Double>();
+        ArrayList<Double> X = new ArrayList<>();
+        ArrayList<Double> Y = new ArrayList<>();
 
         int[][] room ={
                 {1,1,1,1,1,0,1,1,1,1,1},
@@ -534,7 +534,7 @@ public class RoomList {
         return buildroom(X,Y,room,setY);
     }
 
-    public ArrayList<Double> buildroom(ArrayList roomX, ArrayList roomY, int[][] roomBase, boolean setY){
+    private ArrayList<Double> buildroom(ArrayList<Double> roomX, ArrayList<Double> roomY, int[][] roomBase, boolean setY){
         int y=-2;
         for (int i = 0; i <= 10; i++) {
             int x = -2;
