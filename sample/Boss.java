@@ -84,6 +84,8 @@ public class Boss {
     }
 
 
+
+
     public void bossmove(ImageView hero, ImageView enemy, Pane background, int[] availablemovement) {
         if (
                 !bossspawned) {

@@ -7,31 +7,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 
 public class Controller {
 
-    ArrayList<ImageView> walls = new ArrayList<ImageView>();
-    boolean firstroom = true;
-    int freeslot = 0;
-    double health = 100;
-    int turn = 0;
-    int fearturn = 0;
-    int l = 0;
-    int charge = 0;
-    int bossarmor = 1;
+    private ArrayList<ImageView> walls = new ArrayList<>();
+    private double health = 100;
+    private int turn = 0;
+    private int fearturn = 0;
+    private int l = 0;
+    private int charge = 0;
+    private int bossarmor = 1;
 
 
     @FXML
@@ -67,65 +60,49 @@ public class Controller {
     ImageView nrzif;
     @FXML
     ImageView firstlightimgv;
-    ArrayList<ImageView> slots = new ArrayList<>();
-    boolean[] freeslots = {false, false, false, false, false, false, false, false, false};
-    boolean[] potionslots = {false, false, false, false, false, false, false, false, false};
-    double x = 0;
-    double y = 0;
-    int lightcounter = 70;
-    int fear = 80;
-    int selected = 1;
-    boolean cancelsuck = false;
+    private ArrayList<ImageView> slots = new ArrayList<>();
+    private boolean[] freeslots = {false, false, false, false, false, false, false, false, false};
+    private boolean[] potionslots = {false, false, false, false, false, false, false, false, false};
+    private int lightcounter = 70;
+    private int fear = 80;
+    private int selected = 1;
+    private boolean cancelsuck = false;
 
-    int slimehealth = 4;
-    int floaterhealth = 4;
-    int blobhealth = 6;
-    Image imagenotava = new Image(getClass().getResource("/image/notavailable.png").toExternalForm());
-    Image imageavailable = new Image(getClass().getResource("/image/available.png").toExternalForm());
-    Image chestopening = new Image(getClass().getResource("/image/chestopenanimation.gif").toExternalForm());
-    Image darknessimage = new Image(getClass().getResource("/image/darkness.png").toExternalForm());
-    Image fineimg = new Image(getClass().getResource("/image/fine.gif").toExternalForm());
-    Image worriedimg = new Image(getClass().getResource("/image/worried.gif").toExternalForm());
-    Image stressedimg = new Image(getClass().getResource("/image/stressed.gif").toExternalForm());
-    Image horroredimg = new Image(getClass().getResource("/image/horrored.gif").toExternalForm());
-    Image light4 = new Image(getClass().getResource("/image/light4.png").toExternalForm());
-    Image light3 = new Image(getClass().getResource("/image/light3.png").toExternalForm());
-    Image light2 = new Image(getClass().getResource("/image/light2.png").toExternalForm());
-    Image light1 = new Image(getClass().getResource("/image/light1.png").toExternalForm());
-    Image light0 = new Image(getClass().getResource("/image/light0.png").toExternalForm());
-    Image swordimg = new Image(getClass().getResource("/image/sword.png").toExternalForm());
-    Image potionimg = new Image(getClass().getResource("/image/potion.gif").toExternalForm());
-    Image playerswordimg = new Image(getClass().getResource("/image/PlayerS.gif").toExternalForm());
-    Image playerimg = new Image(getClass().getResource("/image/Player.gif").toExternalForm());
-    Image chestclosedimg = new Image(getClass().getResource("/image/chest.png").toExternalForm());
-    Image attackableimg = new Image(getClass().getResource("/image/attackable.png").toExternalForm());
-    Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
-    Image roomimg1 = new Image(getClass().getResource("/image/1.png").toExternalForm());
-    Image roomimg2 = new Image(getClass().getResource("/image/2.png").toExternalForm());
-    Image roomimg3 = new Image(getClass().getResource("/image/3.png").toExternalForm());
-    Image roomimg4 = new Image(getClass().getResource("/image/4.png").toExternalForm());
-    Image roomimg5 = new Image(getClass().getResource("/image/5.png").toExternalForm());
-    Image roomimg6 = new Image(getClass().getResource("/image/6.png").toExternalForm());
-    Image roomimg7 = new Image(getClass().getResource("/image/7.png").toExternalForm());
-    Image roomimg8 = new Image(getClass().getResource("/image/8.png").toExternalForm());
-    Image roomimg9 = new Image(getClass().getResource("/image/9.png").toExternalForm());
-    Image roomimg0 = new Image(getClass().getResource("/image/0.png").toExternalForm());
-    Image playerpotion = new Image(getClass().getResource("/image/PlayerPotion.png").toExternalForm());
-    Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
-    Image firstlight = new Image(getClass().getResource("/image/firstlight.gif").toExternalForm());
-    Image wallimg = new Image(getClass().getResource("/image/dungeonwall.png").toExternalForm());
-    ArrayList<Image> Roomimgs = new ArrayList<>();
-    Rooms roomclass = new Rooms();
-    Enemy enemyclass = new Enemy();
-    Boss bossclass = new Boss();
-    ArrayList<ImageView> enemies = new ArrayList<>();
+    private int slimehealth = 4;
+    private int floaterhealth = 4;
+    private int blobhealth = 6;
+    private Image imagenotava = new Image(getClass().getResource("/image/notavailable.png").toExternalForm());
+    private Image imageavailable = new Image(getClass().getResource("/image/available.png").toExternalForm());
+    private Image chestopening = new Image(getClass().getResource("/image/chestopenanimation.gif").toExternalForm());
+    private Image darknessimage = new Image(getClass().getResource("/image/darkness.png").toExternalForm());
+    private Image fineimg = new Image(getClass().getResource("/image/fine.gif").toExternalForm());
+    private Image worriedimg = new Image(getClass().getResource("/image/worried.gif").toExternalForm());
+    private Image stressedimg = new Image(getClass().getResource("/image/stressed.gif").toExternalForm());
+    private Image horroredimg = new Image(getClass().getResource("/image/horrored.gif").toExternalForm());
+    private Image light4 = new Image(getClass().getResource("/image/light4.png").toExternalForm());
+    private Image light3 = new Image(getClass().getResource("/image/light3.png").toExternalForm());
+    private Image light2 = new Image(getClass().getResource("/image/light2.png").toExternalForm());
+    private Image light1 = new Image(getClass().getResource("/image/light1.png").toExternalForm());
+    private Image light0 = new Image(getClass().getResource("/image/light0.png").toExternalForm());
+    private Image swordimg = new Image(getClass().getResource("/image/sword.png").toExternalForm());
+    private Image potionimg = new Image(getClass().getResource("/image/potion.gif").toExternalForm());
+    private Image playerswordimg = new Image(getClass().getResource("/image/PlayerS.gif").toExternalForm());
+    private Image playerimg = new Image(getClass().getResource("/image/Player.gif").toExternalForm());
+    private Image chestclosedimg = new Image(getClass().getResource("/image/chest.png").toExternalForm());
+    private Image attackableimg = new Image(getClass().getResource("/image/attackable.png").toExternalForm());
+    private Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
+    private Image playerpotion = new Image(getClass().getResource("/image/PlayerPotion.png").toExternalForm());
+    private Image playerhealimg = new Image(getClass().getResource("/image/playerhealed_new.gif").toExternalForm());
+    private Image wallimg = new Image(getClass().getResource("/image/dungeonwall.png").toExternalForm());
+    private ArrayList<Image> Roomimgs = new ArrayList<>();
+    private Rooms roomclass = new Rooms();
+    private Enemy enemyclass = new Enemy();
+    private Boss bossclass = new Boss();
+    private ArrayList<ImageView> enemies = new ArrayList<>();
 
-    ArrayList<Double> roomORX = null;
-    ArrayList<Double> roomORY = null;
-    boolean chestopened = false;
-    boolean chestgenerated = false;
-    ArrayList<ImageView> fearenemylist = new ArrayList<>();
-    private ArrayList<ImageView> darkness = new ArrayList<ImageView>();
+    private boolean chestopened = false;
+    private ArrayList<ImageView> fearenemylist = new ArrayList<>();
+    private ArrayList<ImageView> darkness = new ArrayList<>();
 
     public void initialize() {
         lightup(hero.getX(), hero.getY(), 4);
@@ -136,18 +113,18 @@ public class Controller {
         enemies.add(enemyclass.floater);
         enemies.add(enemyclass.blob);
 
-        Roomimgs.add(roomimg0);
-        Roomimgs.add(roomimg1);
-        Roomimgs.add(roomimg2);
-        Roomimgs.add(roomimg3);
-        Roomimgs.add(roomimg4);
-        Roomimgs.add(roomimg5);
-        Roomimgs.add(roomimg6);
-        Roomimgs.add(roomimg7);
-        Roomimgs.add(roomimg8);
-        Roomimgs.add(roomimg9);
+        Roomimgs.add(new Image(getClass().getResource("/image/0.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/1.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/2.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/3.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/4.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/5.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/6.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/7.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/8.png").toExternalForm()));
+        Roomimgs.add(new Image(getClass().getResource("/image/9.png").toExternalForm()));
 
-        for (int i = 0; i < 121; i++){
+        for (int i = 0; i < 121; i++) {
             walls.add(new ImageView());
             background.getChildren().add(walls.get(i));
             walls.get(i).toBack();
@@ -159,15 +136,14 @@ public class Controller {
         }
 
 
-
         double darkx = -128;
         double darky = -128;
         double darkxadd = 0;
         double darkyadd = 0;
-        enemyclass.slime.setX(770);
-        enemyclass.floater.setX(770);
-        enemyclass.blob.setX(770);
 
+        for (ImageView enemy : enemies) {
+            enemy.setX(770);
+        }
 
         for (int m = 1; m <= 9; m++) {
             ImageView slot = new ImageView();
@@ -217,7 +193,6 @@ public class Controller {
 
         }
 
-
         int k = 1;
         for (int j = 1; k <= 121; j++) {
             for (int i = 1; i <= 11; i++) {
@@ -252,7 +227,7 @@ public class Controller {
 
     }
 
-    public void burn(KeyEvent keyEvent, int selected) {
+    private void burn(KeyEvent keyEvent, int selected) {
         if (keyEvent.getCharacter().equals("q")) {
             if (freeslots[selected - 1]) {
                 freeslots[selected - 1] = false;
@@ -362,9 +337,10 @@ public class Controller {
         }
     }
 
+
     public void move(KeyEvent keyEvent) throws IOException {
 
-        if (roomclass.roomnr == 1){
+        if (roomclass.roomnr == 1) {
             roomclass.setstartroom(walls);
         }
 
@@ -372,68 +348,19 @@ public class Controller {
         slimehealth = enemyclass.attack(hero, enemyclass.slime, freeslots, selected, slimehealth, keyEvent);
         floaterhealth = enemyclass.attack(hero, enemyclass.floater, freeslots, selected, floaterhealth, keyEvent);
         blobhealth = enemyclass.attack(hero, enemyclass.blob, freeslots, selected, blobhealth, keyEvent);
-        if (slimehealth == 0) {
-            enemyclass.slime.setX(6400);
-            enemyclass.enemyroomdead = roomclass.roomnr;
-
-            if (lightcounter <= 69) {
-                lightcounter += 1;
-            } else {
-                lightcounter = 70;
-            }
-
-            if (!(enemyclass.enemyroom == roomclass.roomnr)) {
-                slimehealth = 4;
-            }
-        }
-        if (floaterhealth == 0) {
-            enemyclass.floater.setImage(enemyclass.floaterimg);
-            enemyclass.floater.setX(6400);
-            enemyclass.enemyroomdead = roomclass.roomnr;
-
-            if (lightcounter <= 65) {
-                lightcounter += 5;
-            } else {
-                lightcounter = 70;
-            }
-
-            if (!(enemyclass.enemyroom == roomclass.roomnr)) {
-                floaterhealth = 4;
-            }
-        }
-        if (blobhealth == 0) {
-            enemyclass.blob.setImage(enemyclass.blobimg);
-            enemyclass.blob.setX(6400);
-            enemyclass.enemyroomdead = roomclass.roomnr;
 
 
-            if (lightcounter <= 60) {
-                lightcounter += 10;
-            } else {
-                lightcounter = 70;
-            }
+        enemykilled();
 
-            if (!(enemyclass.enemyroom == roomclass.roomnr)) {
-                blobhealth = 6;
-            }
-        }
 
+        select(keyEvent);
+        lightup(hero.getX(), hero.getY(), 0);
+        actionable(hero.getX(), hero.getY(), chest.getX(), chest.getY());
 
         if (chestopened) {
             chest.setX(770);
             chest.setImage(chestclosedimg);
             chestopened = false;
-        }
-
-
-        if (firstroom) {
-            roomORX = new ArrayList<>();
-            roomORY = new ArrayList<>();
-            for (int i = 0; i < walls.size(); i++) {
-                roomORX.add(walls.get(i).getX());
-                roomORY.add(walls.get(i).getY());
-            }
-            firstroom = false;
         }
 
         if (keyEvent.getCharacter().equals("x")) {
@@ -450,12 +377,6 @@ public class Controller {
 
             stage.show();
         }
-
-        select(keyEvent);
-        lightup(hero.getX(), hero.getY(), 0);
-
-
-        actionable(hero.getX(), hero.getY(), chest.getX(), chest.getY());
 
         if (keyEvent.getCharacter().equals("e")) {
             if (chest.getX() == hero.getX() && chest.getY() == hero.getY()) {
@@ -494,140 +415,18 @@ public class Controller {
 
         movement(wallcollision(walls, hero), keyEvent);
         roomclass.newroom = false;
-        roomclass.changeroom(hero, walls, background, controlls);
+        roomclass.changeroom(hero, walls, controlls);
 
-
+        //BOSS OR NORMAL ROOM
         if (roomclass.roomnr < 50) {
-            if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth == 4) {
-
-                turn++;
-                if (roomclass.newroom) {
-                    spawn(enemyclass.slime, walls, turn);
-                }
-                if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && floaterhealth == 4 && roomclass.roomnr % 2 == 0) {
-                    turn += 2;
-                    if (roomclass.newroom) {
-                        spawn(enemyclass.floater, walls, turn);
-                    }
-
-                } else {
-                    enemyclass.floater.setX(770);
-                    floaterhealth = 4;
-                }
-                if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && blobhealth == 6 && roomclass.roomnr % 5 == 0) {
-                    turn += 4;
-                    if (roomclass.newroom) {
-                        spawn(enemyclass.blob, walls, turn);
-                    }
-
-                } else {
-                    enemyclass.blob.setX(770);
-                    blobhealth = 6;
-                }
-                enemyclass.enemyroom++;
-            } else {
-                if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth != 4) {
-                    turn++;
-                    slimehealth = 4;
-                    spawn(enemyclass.slime, walls, turn);
-                }
-            }
+            enemyspawner();
         } else {
-            nrdec.setVisible(false);
-            nrzif.setVisible(false);
-            enemyclass.floater.setX(770);
-            enemyclass.slime.setX(770);
-            enemyclass.blob.setX(770);
-
-
-            if (turn % 5 == 0) {
-                if (!cancelsuck && (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30) && charge != 3) {
-                    if (charge == 0) {
-                        bossarmor = 3;
-                    }
-                    bossclass.boss.setImage(bossclass.suckimg);
-                    charge++;
-
-                } else {
-
-                    bossclass.boss.setImage(bossclass.bossimg);
-                    bossclass.bossmove(hero, bossclass.boss, background, wallcollision(walls, bossclass.boss));
-                    if (charge == 0) {
-                        cancelsuck = false;
-                    }
-                }
-                if (charge == 3 && !cancelsuck) {
-                    lightcounter = bossclass.suckattack( bossclass.boss);
-                    health -= 5;
-                    bossclass.boss.setImage(bossclass.bossimg);
-                    charge = 0;
-                    cancelsuck = false;
-                } else if (cancelsuck) {
-                    charge = 0;
-                }
-            }
-            if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") ||
-                    fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") ||
-                    fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") ||
-                    fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j")) {
-                if (bossarmor == 0) {
-                    if (freeslots[selected - 1] && bossclass.bosshealth != 0) {
-                        bossclass.bosshealth--;
-                        cancelsuck = true;
-
-                        if (lightcounter <= 10) {
-                            bossarmor = 2;
-                        } else {
-                            bossarmor = 1;
-                        }
-                    }
-                } else {
-                    bossarmor--;
-                }
-            }
-
-
-            if (bossclass.bosshealth == 0) {
-                bossclass.endgame();
-            }
-
-
-            for (int i = 0; i < darkness.size(); i++) {
-                darkness.get(i).toFront();
-                bossclass.bosshealthbar.toFront();
-            }
-
-            if (turn % 50 == 0) {
-                chest.setX(770);
-                turn++;
-                spawn(chest, walls, turn);
-                chestgenerated = true;
-                chestopened = false;
-                roomclass.newroom = false;
-            }
-
-
-            if (bosshurt(hero)) {
-                if (lightcounter <= 10) {
-                    health = enemyclass.hurt(healthbar, health, 10);
-                } else {
-                    health = enemyclass.hurt(healthbar, health, 5);
-                }
-            }
-
-            bossclass.updatehealthbar(bossclass.bosshealth);
-
+            bossroom(keyEvent);
         }
 
-
+        //CHEST SPAWNING
         if (roomclass.roomnr != 1 && roomclass.newroom) {
-            chest.setX(770);
-            turn++;
-            spawn(chest, walls, turn);
-            chestgenerated = true;
-            chestopened = false;
-            roomclass.newroom = false;
-
+            chestspawner();
         }
 
 
@@ -659,57 +458,12 @@ public class Controller {
         System.out.println("Enemy B X: " + enemyclass.blob.getX());
         System.out.println("Enemy B Y: " + enemyclass.blob.getY());
 
-        if (roomclass.roomnr == 2) {
+        if (roomclass.roomnr == 2 ) {
             background.getChildren().remove(firstlightimgv);
         }
 
 
-        if (lightcounter >= 50) {
-            lightup(hero.getX(), hero.getY(), 4);
-            lightmeter.setImage(light4);
-            if (lightcounter != 0) {
-
-                if (fear < 80) {
-                    fear += 2;
-                }
-            }
-        }
-        if (lightcounter < 50 && lightcounter > 20) {
-            lightup(hero.getX(), hero.getY(), 3);
-            lightmeter.setImage(light3);
-            if (lightcounter != 0) {
-
-                if (fear < 80) {
-                    fear++;
-                }
-            }
-        }
-        if (lightcounter <= 20 && lightcounter > 10) {
-            lightup(hero.getX(), hero.getY(), 2);
-            lightmeter.setImage(light2);
-            if (lightcounter != 0) {
-
-                if (fear < 80) {
-                    fear++;
-                }
-            }
-        }
-        if (lightcounter <= 10) {
-            lightup(hero.getX(), hero.getY(), 1);
-            lightmeter.setImage(light1);
-            if (lightcounter != 0) {
-
-                if (fear < 80) {
-                    fear++;
-                }
-            }
-
-        }
-        if (lightcounter == 0) {
-            lightup(hero.getX(), hero.getY(), 0);
-            lightmeter.setImage(light0);
-
-        }
+        fear = fearwhenlight(lightcounter, fear);
 
 
         fearmetercheck(fear);
@@ -717,22 +471,18 @@ public class Controller {
 
 
         if (roomclass.slimeinroom) {
-
             enemyclass.slime.setFocusTraversable(true);
             enemyclass.enemyvision(enemyclass.slime, hero, lightcounter, slimehealth, "Slime");
             if (turn % 2 == 0) {
                 enemyclass.enemymove(hero, enemyclass.slime, background, wallcollision(walls, enemyclass.slime));
-
             }
 
         }
         if (roomclass.floaterinroom && roomclass.roomnr % 2 == 0) {
-
             enemyclass.floater.setFocusTraversable(true);
             enemyclass.enemyvision(enemyclass.floater, hero, lightcounter, floaterhealth, "Floater");
             if (turn % 3 == 0) {
                 enemyclass.enemymove(hero, enemyclass.floater, background, wallcollision(walls, enemyclass.floater));
-
             }
 
         }
@@ -743,9 +493,7 @@ public class Controller {
             enemyclass.enemyvision(enemyclass.blob, hero, lightcounter, blobhealth, "Blob");
             if (turn % 5 == 0) {
                 enemyclass.enemymove(hero, enemyclass.blob, background, wallcollision(walls, enemyclass.blob));
-
             }
-
         }
 
         if (enemyclass.slime.getX() == hero.getX() && enemyclass.slime.getY() == hero.getY()) {
@@ -777,12 +525,12 @@ public class Controller {
             predfieldsboss(wallcollision(walls, hero), bossclass.boss);
         }
 
+        //GAME OVER
         if (health <= 0) {
             healthbar.setProgress(2 / 100);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameOver.fxml"));
 
-            Parent GO = null;
-            GO = (Parent) fxmlLoader.load();
+            Parent GO = fxmlLoader.load();
             GO.getStylesheets().addAll(this.getClass().getResource("styles.css").toExternalForm());
             Stage stage = new Stage();
             stage.setTitle("Game Over");
@@ -797,6 +545,7 @@ public class Controller {
             background.getChildren().remove(healthbar);
 
         }
+        //FEARENEMY
         if (fear <= 10) {
             if (fearturn % 3 == 0) {
 
@@ -834,7 +583,7 @@ public class Controller {
             }
         }
 
-
+        //ROOM NRs
         nrdec.setImage(Roomimgs.get((roomclass.roomnr - roomclass.roomnr % 10) / 10));
         nrzif.setImage(Roomimgs.get(roomclass.roomnr % 10));
 
@@ -852,7 +601,195 @@ public class Controller {
         healthbar.setProgress(health / 100);
     }
 
-    public void fearmetercheck(int fear) {
+
+    private int fearwhenlight(int lightcounter, int fear) {
+        if (lightcounter >= 50) {
+            lightup(hero.getX(), hero.getY(), 4);
+            lightmeter.setImage(light4);
+
+            if (fear < 80) {
+                fear += 2;
+            }
+        }
+        if (lightcounter < 50 && lightcounter > 20) {
+            lightup(hero.getX(), hero.getY(), 3);
+            lightmeter.setImage(light3);
+
+            if (fear < 80) {
+                fear++;
+            }
+        }
+        if (lightcounter <= 20 && lightcounter > 10) {
+            lightup(hero.getX(), hero.getY(), 2);
+            lightmeter.setImage(light2);
+
+            if (fear < 80) {
+                fear++;
+            }
+        }
+        if (lightcounter <= 10) {
+            lightup(hero.getX(), hero.getY(), 1);
+            lightmeter.setImage(light1);
+            if (lightcounter != 0) {
+
+                if (fear < 80) {
+                    fear++;
+                }
+            }
+
+        }
+        if (lightcounter == 0) {
+            lightup(hero.getX(), hero.getY(), 0);
+            lightmeter.setImage(light0);
+
+        }
+
+        return fear;
+    }
+
+    private void bossroom(KeyEvent keyEvent) throws IOException {
+
+        nrdec.setVisible(false);
+        nrzif.setVisible(false);
+        enemyclass.floater.setX(770);
+        enemyclass.slime.setX(770);
+        enemyclass.blob.setX(770);
+
+
+        if (turn % 5 == 0) {
+            if (!cancelsuck && (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30) && charge != 3) {
+                if (charge == 0) {
+                    bossarmor = 3;
+                }
+                bossclass.boss.setImage(bossclass.suckimg);
+                charge++;
+
+            } else {
+
+                bossclass.boss.setImage(bossclass.bossimg);
+                bossclass.bossmove(hero, bossclass.boss, background, wallcollision(walls, bossclass.boss));
+                if (charge == 0) {
+                    cancelsuck = false;
+                }
+            }
+            if (charge == 3 && !cancelsuck) {
+                lightcounter = bossclass.suckattack(bossclass.boss);
+                health -= 5;
+                bossclass.boss.setImage(bossclass.bossimg);
+                charge = 0;
+                cancelsuck = false;
+            } else if (cancelsuck) {
+                charge = 0;
+            }
+        }
+        if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") ||
+                fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") ||
+                fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") ||
+                fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j")) {
+            if (bossarmor == 0) {
+                if (freeslots[selected - 1] && bossclass.bosshealth != 0) {
+                    bossclass.bosshealth--;
+                    cancelsuck = true;
+
+                    if (lightcounter <= 10) {
+                        bossarmor = 2;
+                    } else {
+                        bossarmor = 1;
+                    }
+                }
+            } else {
+                bossarmor--;
+            }
+        }
+
+
+        if (bossclass.bosshealth == 0) {
+            bossclass.endgame();
+        }
+
+
+        for (int i = 0; i < darkness.size(); i++) {
+            darkness.get(i).toFront();
+            bossclass.bosshealthbar.toFront();
+        }
+
+        if (turn % 50 == 0) {
+            chestspawner();
+        }
+
+
+        if (bosshurt(hero)) {
+            if (lightcounter <= 10) {
+                health = enemyclass.hurt(healthbar, health, 10);
+            } else {
+                health = enemyclass.hurt(healthbar, health, 5);
+            }
+        }
+
+        bossclass.updatehealthbar(bossclass.bosshealth);
+    }
+
+    private void chestspawner() {
+        chest.setX(770);
+        turn++;
+        spawn(chest, walls, turn);
+        boolean chestgenerated = true;
+        chestopened = false;
+        roomclass.newroom = false;
+
+    }
+
+    private void enemykilled() {
+
+        if (slimehealth == 0) {
+            enemyclass.slime.setX(6400);
+            enemyclass.enemyroomdead = roomclass.roomnr;
+
+            if (lightcounter <= 69) {
+                lightcounter += 1;
+            } else {
+                lightcounter = 70;
+            }
+
+            if (!(enemyclass.enemyroom == roomclass.roomnr)) {
+                slimehealth = 4;
+            }
+        }
+        if (floaterhealth == 0) {
+            enemyclass.floater.setImage(enemyclass.floatpics.get(0));
+            enemyclass.floater.setX(6400);
+            enemyclass.enemyroomdead = roomclass.roomnr;
+
+            if (lightcounter <= 65) {
+                lightcounter += 5;
+            } else {
+                lightcounter = 70;
+            }
+
+            if (!(enemyclass.enemyroom == roomclass.roomnr)) {
+                floaterhealth = 4;
+            }
+        }
+        if (blobhealth == 0) {
+            enemyclass.blob.setImage(enemyclass.blobpics.get(0));
+            enemyclass.blob.setX(6400);
+            enemyclass.enemyroomdead = roomclass.roomnr;
+
+
+            if (lightcounter <= 60) {
+                lightcounter += 10;
+            } else {
+                lightcounter = 70;
+            }
+
+            if (!(enemyclass.enemyroom == roomclass.roomnr)) {
+                blobhealth = 6;
+            }
+        }
+
+    }
+
+    private void fearmetercheck(int fear) {
         if (fear > 60) {
             fearmeter.setImage(fineimg);
         }
@@ -868,7 +805,7 @@ public class Controller {
 
     }
 
-    public boolean bosshurt(ImageView hero) {
+    private boolean bosshurt(ImageView hero) {
         return (hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY()) ||
                 (hero.getX() == bossclass.boss.getX() + 64 && hero.getY() == bossclass.boss.getY()) ||
                 (hero.getX() == bossclass.boss.getX() && hero.getY() == bossclass.boss.getY() + 64) ||
@@ -876,7 +813,7 @@ public class Controller {
 
     }
 
-    public void openChest(double x, double y, double cx, double cy, ImageView slot, boolean potion) {
+    private void openChest(double x, double y, double cx, double cy, ImageView slot, boolean potion) {
         if (potion) {
             if (x == cx && y == cy) {
                 chest.setImage(chestopening);
@@ -969,7 +906,7 @@ public class Controller {
     }
 
 
-    public void predfieldsboss(int[] available, ImageView boss) {
+    private void predfieldsboss(int[] available, ImageView boss) {
 
         boolean[] attackablefields = new boolean[4];
 
@@ -1187,6 +1124,43 @@ public class Controller {
 
     }
 
+    private void enemyspawner() {
+        if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth == 4) {
+
+            turn++;
+            if (roomclass.newroom) {
+                spawn(enemyclass.slime, walls, turn);
+            }
+            if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && floaterhealth == 4 && roomclass.roomnr % 2 == 0) {
+                turn += 2;
+                if (roomclass.newroom) {
+                    spawn(enemyclass.floater, walls, turn);
+                }
+
+            } else {
+                enemyclass.floater.setX(770);
+                floaterhealth = 4;
+            }
+            if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && blobhealth == 6 && roomclass.roomnr % 5 == 0) {
+                turn += 4;
+                if (roomclass.newroom) {
+                    spawn(enemyclass.blob, walls, turn);
+                }
+
+            } else {
+                enemyclass.blob.setX(770);
+                blobhealth = 6;
+            }
+            enemyclass.enemyroom++;
+        } else {
+            if (enemyclass.enemyroom == roomclass.roomnr && enemyclass.enemyroom != enemyclass.enemyroomdead && slimehealth != 4) {
+                turn++;
+                slimehealth = 4;
+                spawn(enemyclass.slime, walls, turn);
+            }
+        }
+    }
+
 
     public void movement(int[] availablemovement, KeyEvent keyEvent) {
 
@@ -1195,7 +1169,6 @@ public class Controller {
             if (availablemovement[0] != 0) {
 
                 hero.setY(hero.getY() - 64);
-                y -= 64;
 
                 if (lightcounter > 0) {
                     lightcounter--;
@@ -1211,7 +1184,6 @@ public class Controller {
         if (keyEvent.getCharacter().equals("a")) {
             if (availablemovement[1] != 0) {
                 hero.setX(hero.getX() - 64);
-                x -= 64;
 
 
                 if (lightcounter > 0) {
@@ -1227,7 +1199,6 @@ public class Controller {
         if (keyEvent.getCharacter().equals("s")) {
             if (availablemovement[2] != 0) {
                 hero.setY(hero.getY() + 64);
-                y += 64;
 
                 if (lightcounter > 0) {
                     lightcounter--;
@@ -1241,7 +1212,6 @@ public class Controller {
         if (keyEvent.getCharacter().equals("d")) {
             if (availablemovement[3] != 0) {
                 hero.setX(hero.getX() + 64);
-                x += 64;
 
 
                 if (lightcounter > 0) {

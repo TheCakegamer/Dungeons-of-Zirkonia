@@ -1,9 +1,7 @@
 package sample;
 
 
-import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -13,15 +11,15 @@ public class Rooms {
     int roomnr = 1;
     boolean newroom = false;
 
-    Enemy enemyclass = new Enemy();
+    private Enemy enemyclass = new Enemy();
     boolean slimeinroom = false;
     boolean floaterinroom = false;
     boolean blobinroom = false;
-    String lastroom = "ST";
-    RoomList r = new RoomList();
+    private String lastroom = "ST";
+    private RoomList r = new RoomList();
 
 
-    public void changeroom(javafx.scene.image.ImageView hero, ArrayList<javafx.scene.image.ImageView> walls, Pane background, ImageView controlls) {
+    public void changeroom(javafx.scene.image.ImageView hero, ArrayList<javafx.scene.image.ImageView> walls, ImageView controlls) {
 
 
         //North to South
@@ -185,7 +183,6 @@ public class Rooms {
 
 
     }
-
 
 
     private void changeroomfromS(ArrayList<javafx.scene.image.ImageView> walls) {
@@ -442,7 +439,7 @@ public class Rooms {
         activateroomchange(walls, roomOX, roomOY);
     }
 
-    public void activateroomchange(ArrayList<ImageView> walls, ArrayList<Double> roomX, ArrayList<Double> roomY) {
+    private void activateroomchange(ArrayList<ImageView> walls, ArrayList<Double> roomX, ArrayList<Double> roomY) {
         for (int i = 0; i < roomX.size(); i++) {
             walls.get(i).setX(roomX.get(i));
             walls.get(i).setY(roomY.get(i));
@@ -451,9 +448,9 @@ public class Rooms {
         }
     }
 
-    public void setstartroom(ArrayList<ImageView> walls){
+    public void setstartroom(ArrayList<ImageView> walls) {
 
-        activateroomchange(walls,r.setroomstart(false),r.setroomstart(true));
+        activateroomchange(walls, r.setroomstart(false), r.setroomstart(true));
     }
 }
 

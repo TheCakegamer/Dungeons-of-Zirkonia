@@ -6,7 +6,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
-import java.io.File;
 import java.util.ArrayList;
 
 
@@ -14,62 +13,46 @@ public class Enemy {
 
     int enemyroom = 2;
     int enemyroomdead = 1;
+    private boolean imagesloaded = false;
 
 
-    Image slimeimg = new Image(getClass().getResource("/image/Slime.gif").toExternalForm());
-    Image slime1img = new Image(getClass().getResource("/image/Slime1.gif").toExternalForm());
-    Image slime2img = new Image(getClass().getResource("/image/Slime2.gif").toExternalForm());
-    Image slime3img = new Image(getClass().getResource("/image/Slime3.gif").toExternalForm());
-    Image slime4img = new Image(getClass().getResource("/image/Slime4.gif").toExternalForm());
-
-    Image floaterimg = new Image(getClass().getResource("/image/Floater0.gif").toExternalForm());
-    Image floater1img = new Image(getClass().getResource("/image/Floater1.gif").toExternalForm());
-    Image floater2img = new Image(getClass().getResource("/image/Floater2.gif").toExternalForm());
-    Image floater3img = new Image(getClass().getResource("/image/Floater3.gif").toExternalForm());
-    Image floater4img = new Image(getClass().getResource("/image/Floater4.gif").toExternalForm());
 
 
-    Image blobimg = new Image(getClass().getResource("/image/Blob0.gif").toExternalForm());
-    Image blob1img = new Image(getClass().getResource("/image/Blob1.gif").toExternalForm());
-    Image blob2img = new Image(getClass().getResource("/image/Blob2.gif").toExternalForm());
-    Image blob3img = new Image(getClass().getResource("/image/Blob3.gif").toExternalForm());
-    Image blob4img = new Image(getClass().getResource("/image/Blob4.gif").toExternalForm());
-    Image blob5img = new Image(getClass().getResource("/image/Blob5.gif").toExternalForm());
-    Image blob6img = new Image(getClass().getResource("/image/Blob6.gif").toExternalForm());
 
-    Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
+
+    private Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
 
     ImageView slime = new ImageView();
     ImageView floater = new ImageView();
     ImageView blob = new ImageView();
 
-    ArrayList<Image> slimepics = new ArrayList<>();
-    ArrayList<Image> floatpics = new ArrayList<>();
-    ArrayList<Image> blobpics = new ArrayList<>();
+    private ArrayList<Image> slimepics = new ArrayList<>();
+    public ArrayList<Image> floatpics = new ArrayList<>();
+    public ArrayList<Image> blobpics = new ArrayList<>();
 
-    boolean enemyspawned = false;
+    private boolean enemyspawned = false;
 
-    public void setenemyhealthimg() {
+    private void setenemyhealthimg() {
 
-        slimepics.add(slimeimg);
-        slimepics.add(slime1img);
-        slimepics.add(slime2img);
-        slimepics.add(slime3img);
-        slimepics.add(slime4img);
+        slimepics.add(new Image(getClass().getResource("/image/Slime.gif").toExternalForm()));
+        slimepics.add(new Image(getClass().getResource("/image/Slime1.gif").toExternalForm()));
+        slimepics.add(new Image(getClass().getResource("/image/Slime2.gif").toExternalForm()));
+        slimepics.add(new Image(getClass().getResource("/image/Slime3.gif").toExternalForm()));
+        slimepics.add(new Image(getClass().getResource("/image/Slime4.gif").toExternalForm()));
 
-        floatpics.add(floaterimg);
-        floatpics.add(floater1img);
-        floatpics.add(floater2img);
-        floatpics.add(floater3img);
-        floatpics.add(floater4img);
+        floatpics.add(new Image(getClass().getResource("/image/Floater0.gif").toExternalForm()));
+        floatpics.add(new Image(getClass().getResource("/image/Floater1.gif").toExternalForm()));
+        floatpics.add(new Image(getClass().getResource("/image/Floater2.gif").toExternalForm()));
+        floatpics.add(new Image(getClass().getResource("/image/Floater3.gif").toExternalForm()));
+        floatpics.add(new Image(getClass().getResource("/image/Floater4.gif").toExternalForm()));
 
-        blobpics.add(blobimg);
-        blobpics.add(blob1img);
-        blobpics.add(blob2img);
-        blobpics.add(blob3img);
-        blobpics.add(blob4img);
-        blobpics.add(blob5img);
-        blobpics.add(blob6img);
+        blobpics.add(new Image(getClass().getResource("/image/Blob0.gif").toExternalForm()));
+        blobpics.add(new Image(getClass().getResource("/image/Blob1.gif").toExternalForm()));
+        blobpics.add(new Image(getClass().getResource("/image/Blob2.gif").toExternalForm()));
+        blobpics.add(new Image(getClass().getResource("/image/Blob3.gif").toExternalForm()));
+        blobpics.add(new Image(getClass().getResource("/image/Blob4.gif").toExternalForm()));
+        blobpics.add(new Image(getClass().getResource("/image/Blob5.gif").toExternalForm()));
+        blobpics.add(new Image(getClass().getResource("/image/Blob6.gif").toExternalForm()));
 
     }
 
@@ -185,7 +168,10 @@ public class Enemy {
     }
 
     public void enemyvision(ImageView enemy, ImageView hero, int lightcounter, int enemyhealth, String enemykind) {
-        setenemyhealthimg();
+        if (!imagesloaded) {
+            setenemyhealthimg();
+            imagesloaded = true;
+        }
         if (lightcounter >= 50 && (enemy.getX() > (hero.getX() + 320) ^ enemy.getX() < (hero.getX() - 320) || enemy.getY() > (hero.getY() + 320) ^ enemy.getY() < (hero.getY() - 320))) {
             enemy.toFront();
             enemy.setImage(enemyindarkimg);
@@ -207,12 +193,16 @@ public class Enemy {
             enemy.toBack();
 
 
-            if (enemykind.equals("Slime")) {
-                enemy.setImage(slimepics.get(enemyhealth));
-            } else if (enemykind.equals("Floater")) {
-                enemy.setImage(floatpics.get(enemyhealth));
-            } else if (enemykind.equals("Blob")) {
-                enemy.setImage(blobpics.get(enemyhealth));
+            switch (enemykind) {
+                case "Slime":
+                    enemy.setImage(slimepics.get(enemyhealth));
+                    break;
+                case "Floater":
+                    enemy.setImage(floatpics.get(enemyhealth));
+                    break;
+                case "Blob":
+                    enemy.setImage(blobpics.get(enemyhealth));
+                    break;
             }
 
         }
