@@ -458,12 +458,18 @@ public class Controller {
         System.out.println("Enemy B X: " + enemyclass.blob.getX());
         System.out.println("Enemy B Y: " + enemyclass.blob.getY());
 
-        if (roomclass.roomnr == 2 ) {
-            background.getChildren().remove(firstlightimgv);
-        }
+
 
 
         fear = fearwhenlight(lightcounter, fear);
+
+        // LIGHT ON FIRST ROOM
+        if (roomclass.roomnr == 2 ) {
+            background.getChildren().remove(firstlightimgv);
+        }else if (roomclass.roomnr == 1){
+            firstlightimgv.toFront();
+            lightup(0,0,2);
+        }
 
 
         fearmetercheck(fear);
@@ -566,6 +572,9 @@ public class Controller {
                 fearturn++;
                 for (int i = 0; i < fearenemylist.size(); i++) {
                     enemyclass.enemymove(hero, fearenemylist.get(i), background, wallcollision(walls, fearenemylist.get(i)));
+                    if (fearenemylist.get(i).getX() == hero.getX() && fearenemylist.get(i).getY() == hero.getY()){
+                        background.getChildren().remove(fearenemylist.get(i));
+                    }
                 }
             }
         }
@@ -586,7 +595,10 @@ public class Controller {
         //ROOM NRs
         nrdec.setImage(Roomimgs.get((roomclass.roomnr - roomclass.roomnr % 10) / 10));
         nrzif.setImage(Roomimgs.get(roomclass.roomnr % 10));
-
+        nrdec.setOpacity(0.5);
+        nrzif.setOpacity(0.5);
+        nrdec.toFront();
+        nrzif.toFront();
 
         for (int slotcount = 0; slotcount < freeslots.length; slotcount++) {
             if (freeslots[slotcount]) {
@@ -1018,13 +1030,13 @@ public class Controller {
                 for (int i = 0; i < darkness.size(); i++) {
 
                     if (herox + 192 > darkness.get(i).getX() && herox - 192 < darkness.get(i).getX() && heroy + 192 > darkness.get(i).getY() && heroy - 192 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.8);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 128 > darkness.get(i).getX() && herox - 128 < darkness.get(i).getX() && heroy + 128 > darkness.get(i).getY() && heroy - 128 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.7);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 64 > darkness.get(i).getX() && herox - 64 < darkness.get(i).getX() && heroy + 64 > darkness.get(i).getY() && heroy - 64 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.5);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
 
 
@@ -1035,13 +1047,13 @@ public class Controller {
                 for (int i = 0; i < darkness.size(); i++) {
 
                     if (herox + 192 > darkness.get(i).getX() && herox - 192 < darkness.get(i).getX() && heroy + 192 > darkness.get(i).getY() && heroy - 192 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.7);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 128 > darkness.get(i).getX() && herox - 128 < darkness.get(i).getX() && heroy + 128 > darkness.get(i).getY() && heroy - 128 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.5);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 64 > darkness.get(i).getX() && herox - 64 < darkness.get(i).getX() && heroy + 64 > darkness.get(i).getY() && heroy - 64 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.35);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.05);
                     }
 
 
@@ -1051,16 +1063,16 @@ public class Controller {
             case 3:
                 for (int i = 0; i < darkness.size(); i++) {
                     if (herox + 256 > darkness.get(i).getX() && herox - 256 < darkness.get(i).getX() && heroy + 256 > darkness.get(i).getY() && heroy - 256 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.7);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.2);
                     }
                     if (herox + 192 > darkness.get(i).getX() && herox - 192 < darkness.get(i).getX() && heroy + 192 > darkness.get(i).getY() && heroy - 192 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.5);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 128 > darkness.get(i).getX() && herox - 128 < darkness.get(i).getX() && heroy + 128 > darkness.get(i).getY() && heroy - 128 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.35);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 64 > darkness.get(i).getX() && herox - 64 < darkness.get(i).getX() && heroy + 64 > darkness.get(i).getY() && heroy - 64 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.2);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                 }
 
@@ -1068,19 +1080,19 @@ public class Controller {
             case 4:
                 for (int i = 0; i < darkness.size(); i++) {
                     if (herox + 320 > darkness.get(i).getX() && herox - 320 < darkness.get(i).getX() && heroy + 320 > darkness.get(i).getY() && heroy - 320 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.7);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.2);
                     }
                     if (herox + 256 > darkness.get(i).getX() && herox - 256 < darkness.get(i).getX() && heroy + 256 > darkness.get(i).getY() && heroy - 256 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.5);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.2);
                     }
                     if (herox + 192 > darkness.get(i).getX() && herox - 192 < darkness.get(i).getX() && heroy + 192 > darkness.get(i).getY() && heroy - 192 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.35);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 128 > darkness.get(i).getX() && herox - 128 < darkness.get(i).getX() && heroy + 128 > darkness.get(i).getY() && heroy - 128 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.2);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                     if (herox + 64 > darkness.get(i).getX() && herox - 64 < darkness.get(i).getX() && heroy + 64 > darkness.get(i).getY() && heroy - 64 < darkness.get(i).getY()) {
-                        darkness.get(i).setOpacity(0.05);
+                        darkness.get(i).setOpacity(darkness.get(i).getOpacity() - 0.1);
                     }
                 }
 

@@ -17,7 +17,7 @@
             </image>
         </ImageView>
         <Button fx:id="GObutton" layoutX="289.0" layoutY="300.0" mnemonicParsing="false" onAction="#closegame"
-                prefHeight="45.0" prefWidth="75.0" text="Ouch" textFill="#c3c3c3"/>
+                prefHeight="45.0" prefWidth="75.0" text="OOF" textFill="#c3c3c3"/>
         <Label layoutX="233.0" layoutY="187.0" text="You have been slain in the dungeon..." textFill="#4d0909">
             <font>
                 <Font name="Elephant" size="18.0"/>

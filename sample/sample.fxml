@@ -109,7 +109,7 @@
         <Image url="@../image/0.png"/>
 
     </ImageView>
-    <ImageView fx:id="firstlightimgv" fitHeight="207.0" fitWidth="247.0" layoutX="-8.0" layoutY="6.0" opacity="0.49"
+    <ImageView fx:id="firstlightimgv" fitHeight="207.0" fitWidth="247.0" layoutX="-8.0" layoutY="6.0" opacity="0.3"
                pickOnBounds="true" preserveRatio="true" x="64.0">
 
         <Image url="@../image/firstlight.gif"/>
