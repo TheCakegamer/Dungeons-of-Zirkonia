@@ -16,10 +16,6 @@ public class Enemy {
     private boolean imagesloaded = false;
 
 
-
-
-
-
     private Image enemyindarkimg = new Image(getClass().getResource("/image/enemyinthedark.gif").toExternalForm());
 
     ImageView slime = new ImageView();
@@ -70,7 +66,6 @@ public class Enemy {
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == (hero.getX() - 64) && enemy.getY() == hero.getY()) {
                         enemyhealth--;
-                        System.out.println("hit");
                     }
                 }
                 break;
@@ -78,7 +73,6 @@ public class Enemy {
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == hero.getX() && enemy.getY() == (hero.getY() + 64)) {
                         enemyhealth--;
-                        System.out.println("hit");
 
                     }
                 }
@@ -88,7 +82,6 @@ public class Enemy {
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == hero.getX() && enemy.getY() == (hero.getY() - 64)) {
                         enemyhealth--;
-                        System.out.println("hit");
 
                     }
                 }
@@ -97,7 +90,6 @@ public class Enemy {
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == (hero.getX() + 64) && enemy.getY() == hero.getY()) {
                         enemyhealth--;
-                        System.out.println("hit");
 
                     }
                 }
@@ -126,7 +118,6 @@ public class Enemy {
             slime.toFront();
             floater.toFront();
             blob.toFront();
-            System.out.println("CHILD ADDED");
             enemyspawned = true;
         }
 

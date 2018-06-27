@@ -98,7 +98,6 @@ public class Boss {
             boss.setFitWidth(128);
             boss.setFitHeight(128);
             boss.toFront();
-            System.out.println("BOSS ADDED");
 
             bosshealthbar.setImage(bhealthimg.get(20));
             bosshealthbar.setX(0);

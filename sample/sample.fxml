@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-
-<Pane fx:id="background" prefHeight="836.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.121"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" fx:id="background" prefHeight="836.0" prefWidth="704.0"
+      xmlns="http://javafx.com/javafx/8.0.121" fx:controller="sample.Controller">
 
 
     <ImageView fx:id="chest" fitHeight="64.0" fitWidth="64.0" layoutX="128.0" layoutY="128.0" pickOnBounds="true"

@@ -10,11 +10,10 @@ public class Rooms {
 
     int roomnr = 1;
     boolean newroom = false;
-
-    private Enemy enemyclass = new Enemy();
     boolean slimeinroom = false;
     boolean floaterinroom = false;
     boolean blobinroom = false;
+    private Enemy enemyclass = new Enemy();
     private String lastroom = "ST";
     private RoomList r = new RoomList();
 

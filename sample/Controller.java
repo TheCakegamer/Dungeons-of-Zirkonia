@@ -18,15 +18,6 @@ import java.util.Random;
 
 public class Controller {
 
-    private ArrayList<ImageView> walls = new ArrayList<>();
-    private double health = 100;
-    private int turn = 0;
-    private int fearturn = 0;
-    private int l = 0;
-    private int charge = 0;
-    private int bossarmor = 1;
-
-
     @FXML
     ImageView hero;
     @FXML
@@ -37,7 +28,6 @@ public class Controller {
     ImageView fields;
     @FXML
     ImageView fieldw;
-
     @FXML
     ImageView chest;
     @FXML
@@ -60,6 +50,13 @@ public class Controller {
     ImageView nrzif;
     @FXML
     ImageView firstlightimgv;
+    private ArrayList<ImageView> walls = new ArrayList<>();
+    private double health = 100;
+    private int turn = 0;
+    private int fearturn = 0;
+    private int l = 0;
+    private int charge = 0;
+    private int bossarmor = 1;
     private ArrayList<ImageView> slots = new ArrayList<>();
     private boolean[] freeslots = {false, false, false, false, false, false, false, false, false};
     private boolean[] potionslots = {false, false, false, false, false, false, false, false, false};
@@ -459,16 +456,14 @@ public class Controller {
         System.out.println("Enemy B Y: " + enemyclass.blob.getY());
 
 
-
-
         fear = fearwhenlight(lightcounter, fear);
 
         // LIGHT ON FIRST ROOM
-        if (roomclass.roomnr == 2 ) {
+        if (roomclass.roomnr == 2) {
             background.getChildren().remove(firstlightimgv);
-        }else if (roomclass.roomnr == 1){
+        } else if (roomclass.roomnr == 1) {
             firstlightimgv.toFront();
-            lightup(0,0,2);
+            lightup(0, 0, 2);
         }
 
 
@@ -572,7 +567,7 @@ public class Controller {
                 fearturn++;
                 for (int i = 0; i < fearenemylist.size(); i++) {
                     enemyclass.enemymove(hero, fearenemylist.get(i), background, wallcollision(walls, fearenemylist.get(i)));
-                    if (fearenemylist.get(i).getX() == hero.getX() && fearenemylist.get(i).getY() == hero.getY()){
+                    if (fearenemylist.get(i).getX() == hero.getX() && fearenemylist.get(i).getY() == hero.getY()) {
                         background.getChildren().remove(fearenemylist.get(i));
                     }
                 }
