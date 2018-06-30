@@ -27,7 +27,7 @@ public class Rooms {
             hero.setY(512);
             hero.setLayoutY(0);
             changeroomfromS(walls);
-            if (!lastroom.equals("N")) {
+            if (!lastroom.equals("N") || roomnr == 49) {
                 roomnr++;
             }
             enemyclass.enemyroom = roomnr - 1;
@@ -54,7 +54,7 @@ public class Rooms {
             changeroomfromN(walls);
             controlls.setX(200000);
             enemyclass.slime.setX(770);
-            if (!lastroom.equals("S")) {
+            if (!lastroom.equals("S") || roomnr == 49) {
                 roomnr++;
             }
             enemyclass.enemyroom = roomnr - 1;
@@ -70,7 +70,7 @@ public class Rooms {
             hero.setX(512);
             hero.setLayoutY(0);
             changeroomfromO(walls);
-            if (!lastroom.equals("W")) {
+            if (!lastroom.equals("W") || roomnr == 49) {
                 roomnr++;
             }
             enemyclass.enemyroom = roomnr - 1;
@@ -86,7 +86,7 @@ public class Rooms {
             hero.setX(-128);
             hero.setLayoutY(0);
             changeroomfromW(walls);
-            if (!lastroom.equals("O")) {
+            if (!lastroom.equals("O") || roomnr == 49) {
                 roomnr++;
             }
             enemyclass.enemyroom = roomnr - 1;

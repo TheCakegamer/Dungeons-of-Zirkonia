@@ -337,6 +337,8 @@ public class Controller {
 
     public void move(KeyEvent keyEvent) throws IOException {
 
+
+
         if (roomclass.roomnr == 1) {
             roomclass.setstartroom(walls);
         }
@@ -415,7 +417,7 @@ public class Controller {
         roomclass.changeroom(hero, walls, controlls);
 
         //BOSS OR NORMAL ROOM
-        if (roomclass.roomnr < 50) {
+        if (roomclass.roomnr != 50) {
             enemyspawner();
         } else {
             bossroom(keyEvent);
@@ -525,6 +527,7 @@ public class Controller {
         if (roomclass.roomnr == 50) {
             predfieldsboss(wallcollision(walls, hero), bossclass.boss);
         }
+
 
         //GAME OVER
         if (health <= 0) {
