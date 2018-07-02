@@ -16,7 +16,7 @@
                 <Image url="@../image/Quit.png"/>
             </image>
         </ImageView>
-        <Label layoutX="233.0" layoutY="187.0" text="Do you really want to quit?" textFill="#4d0909">
+        <Label layoutX="233.0" layoutY="187.0" fx:id="text" textFill="#4d0909">
             <font>
                 <Font name="Elephant" size="18.0"/>
             </font>
