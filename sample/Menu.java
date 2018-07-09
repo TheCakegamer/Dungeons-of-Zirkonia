@@ -3,10 +3,13 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Menu {
 
@@ -15,6 +18,8 @@ public class Menu {
     Button Start;
     @FXML
     Button Exit;
+    @FXML
+    Button Create;
 
     Main main = new Main();
 
@@ -44,6 +49,19 @@ public class Menu {
 
 
         menustage.close();
+    }
+
+    public void opencreator() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("creatorwindow.fxml"));
+
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/creatorwindow.fxml"));
+        primaryStage.setTitle("Dungeons of Zirkonia  -  Room-Creator");
+        Scene scene = new Scene(root, 704, 768);
+        root.getStylesheets().addAll(this.getClass()
+                .getResource("/sample/css.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
 
