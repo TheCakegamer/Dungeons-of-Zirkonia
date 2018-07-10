@@ -5,8 +5,10 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.Scanner;
@@ -23,6 +25,7 @@ public class CreatorController {
     int clickedX;
     int clickedY;
     int exits;
+    GameOver GO = new GameOver();
 
     ImageView[][] walls = new ImageView[11][11];
     Image wallimg = new Image(getClass().getResource("/image/dungeonwall.png").toExternalForm());
@@ -59,9 +62,9 @@ public class CreatorController {
                         System.out.printf("Mouse entered cell [%d, %d]%n", colIndex, rowIndex);
                         clickedX = rowIndex;
                         clickedY = colIndex;
-                        if (walls[clickedY][clickedX].getImage().equals(wallimg)) {
+                        if (walls[clickedY][clickedX].getImage().equals(wallimg) && event.getButton() == MouseButton.SECONDARY) {
                             walls[clickedY][clickedX].setImage(groundimg);
-                        } else {
+                        } else if( event.getButton() == MouseButton.PRIMARY) {
                             walls[clickedY][clickedX].setImage(wallimg);
                         }
                     });
@@ -118,26 +121,32 @@ public class CreatorController {
         write(generatefilename(wallnubs), wallnubs, exits);
 
 
+
+    }
+
+    public void exit(){
+        Stage editwindow = (Stage) textbox.getScene().getWindow();
+        editwindow.close();
     }
 
     public String generatefilename(int[][] room) {
 
         exits = 0;
 
-        String roomname = "room";
-        if (room[5][0] == 0) {
+        String roomname = "rm";
+        if (room[5][0] == 0 && room[5][1] == 0) {
             roomname += "N";
             exits++;
         }
-        if (room[10][5] == 0) {
+        if (room[10][5] == 0 && room[9][5] == 0) {
             roomname += "O";
             exits++;
         }
-        if (room[5][10] == 0) {
+        if (room[5][10] == 0 && room[5][9] == 0) {
             roomname += "S";
             exits++;
         }
-        if (room[0][5] == 0) {
+        if (room[0][5] == 0 && room[1][5] == 0) {
             roomname += "W";
             exits++;
         }
@@ -154,10 +163,10 @@ public class CreatorController {
         return save;
     }
 
-    public  void write(String filename, int[][] x, int exits) throws IOException {
+    public void write(String filename, int[][] x, int exits) throws IOException {
 
 
-        if(exits >= 2) {
+        if (exits >= 2) {
             BufferedWriter outputWriter = null;
             outputWriter = new BufferedWriter(new FileWriter("rooms/" + filename + "/"));
             for (int i = 0; i < 11; i++) {
@@ -171,15 +180,12 @@ public class CreatorController {
                 outputWriter.newLine();
             }
             textbox.setText("");
-            outputWriter.newLine();
-            outputWriter.newLine();
             outputWriter.flush();
             outputWriter.close();
-
-
+            clear();
 
         } else {
-
+            GO.oof();
             textbox.setText("Please add at least 2 Exits!");
 
         }

@@ -1,5 +1,13 @@
 #background {
-    -fx-background-image: url("/images/dungeonground.png");
+    -fx-background-image: url("../image/dungeonground.png");
     -fx-background-repeat: repeat;
     -fx-background-size: 64px;
+}
+
+.button {
+    -fx-background-image: url("../image/dungeonground-dark.png");
+    -fx-background-repeat: repeat;
+    -fx-background-size: 64px;
+    -fx-background-insets: 0;
+    -fx-border-radius: 20;
 }

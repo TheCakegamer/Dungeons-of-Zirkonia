@@ -15,12 +15,16 @@ public class GameOver {
     Main main = new Main();
 
     public void closegame(ActionEvent actionEvent) throws Exception {
-        Media oof = new Media(getClass().getResource("/image/oof.mp3").toExternalForm());
-        MediaPlayer oofplayer = new MediaPlayer(oof);
-        oofplayer.play();
+
         Stage GOwindow = (Stage) GObutton.getScene().getWindow();
         GOwindow.close();
         main.start(main.primaryStage);
 
+    }
+
+    public void oof(){
+        Media oof = new Media(getClass().getResource("/image/oof.mp3").toExternalForm());
+        MediaPlayer oofplayer = new MediaPlayer(oof);
+        oofplayer.play();
     }
 }

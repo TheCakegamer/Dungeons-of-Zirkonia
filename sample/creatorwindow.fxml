@@ -38,12 +38,13 @@
                 <ColumnConstraints minWidth="64.0" prefWidth="64.0" />
             </columnConstraints>
         </GridPane>
-        <Button layoutX="584.0" layoutY="722.0" mnemonicParsing="false" onAction="#create" text="Done" />
-      <Button layoutX="523.0" layoutY="722.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
-      <Label fx:id="textbox" ellipsisString="" layoutX="244.0" layoutY="715.0" prefHeight="15.0" prefWidth="217.0" textAlignment="CENTER" textFill="RED" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-         <font>
-            <Font name="Elephant" size="12.0" />
-         </font>
-      </Label>
+        <Button layoutX="584.0" layoutY="722.0" mnemonicParsing="false" onAction="#create" text="Done" textFill="WHITE" />
+        <Button layoutX="523.0" layoutY="722.0" mnemonicParsing="false" onAction="#clear" text="Clear" textFill="WHITE" />
+        <Label fx:id="textbox" ellipsisString="" layoutX="197.0" layoutY="709.0" prefHeight="27.0" prefWidth="312.0" textAlignment="CENTER" textFill="RED" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <font>
+                <Font name="Elephant" size="20.0" />
+            </font>
+        </Label>
+      <Button layoutX="14.0" layoutY="721.0" mnemonicParsing="false" onAction="#exit" text="Exit" textFill="WHITE" />
     </children>
 </Pane>
