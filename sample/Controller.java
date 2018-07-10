@@ -338,7 +338,6 @@ public class Controller {
     public void move(KeyEvent keyEvent) throws IOException {
 
 
-
         if (roomclass.roomnr == 1) {
             roomclass.setstartroom(walls);
         }
@@ -657,6 +656,7 @@ public class Controller {
         return fear;
     }
 
+
     private void bossroom(KeyEvent keyEvent) throws IOException {
 
         nrdec.setVisible(false);
@@ -664,9 +664,18 @@ public class Controller {
         enemyclass.floater.setX(770);
         enemyclass.slime.setX(770);
         enemyclass.blob.setX(770);
+        if (!bossclass.bossspawned) {
+            bossclass.bossmove(hero, bossclass.boss, background, wallcollision(walls, bossclass.boss));
+            for (int i = 0; i < darkness.size(); i++) {
+                darkness.get(i).toFront();
+            }
+            bossclass.bosshealthbar.toFront();
+        }
 
 
-        if (turn % 5 == 0) {
+        if (turn % 5 == 0)
+
+        {
             if (!cancelsuck && (turn % 100 == 20 || turn % 100 == 25 || turn % 100 == 30) && charge != 3) {
                 if (charge == 0) {
                     bossarmor = 3;
@@ -692,10 +701,36 @@ public class Controller {
                 charge = 0;
             }
         }
-        if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") || keyEvent.getCharacter().equals("I") ||
-                fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") || keyEvent.getCharacter().equals("L")||
-                fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") || keyEvent.getCharacter().equals("K")||
-                fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j")|| keyEvent.getCharacter().equals("J")) {
+        if (fieldn.getImage().
+
+                equals(attackableimg) && keyEvent.getCharacter().
+
+                equals("i") || keyEvent.getCharacter().
+
+                equals("I") ||
+                fieldo.getImage().
+
+                        equals(attackableimg) && keyEvent.getCharacter().
+
+                        equals("l") || keyEvent.getCharacter().
+
+                equals("L") ||
+                fields.getImage().
+
+                        equals(attackableimg) && keyEvent.getCharacter().
+
+                        equals("k") || keyEvent.getCharacter().
+
+                equals("K") ||
+                fieldw.getImage().
+
+                        equals(attackableimg) && keyEvent.getCharacter().
+
+                        equals("j") || keyEvent.getCharacter().
+
+                equals("J"))
+
+        {
             if (bossarmor == 0) {
                 if (freeslots[selected - 1] && bossclass.bosshealth != 0) {
                     bossclass.bosshealth--;
@@ -713,22 +748,26 @@ public class Controller {
         }
 
 
-        if (bossclass.bosshealth == 0) {
+        if (bossclass.bosshealth <= 0)
+
+        {
             bossclass.endgame();
         }
 
 
-        for (int i = 0; i < darkness.size(); i++) {
-            darkness.get(i).toFront();
-            bossclass.bosshealthbar.toFront();
-        }
+        if (turn % 50 == 0)
 
-        if (turn % 50 == 0) {
+        {
+
             chestspawner();
         }
 
 
-        if (bosshurt(hero)) {
+        if (
+
+                bosshurt(hero))
+
+        {
             if (lightcounter <= 10) {
                 health = enemyclass.hurt(healthbar, health, 10);
             } else {
@@ -1175,7 +1214,7 @@ public class Controller {
     public void movement(int[] availablemovement, KeyEvent keyEvent) {
 
 
-        if (keyEvent.getCharacter().equals("w")|| keyEvent.getCharacter().equals("W")) {
+        if (keyEvent.getCharacter().equals("w") || keyEvent.getCharacter().equals("W")) {
             if (availablemovement[0] != 0) {
 
                 hero.setY(hero.getY() - 64);
@@ -1191,7 +1230,7 @@ public class Controller {
             }
 
         }
-        if (keyEvent.getCharacter().equals("a")|| keyEvent.getCharacter().equals("A")) {
+        if (keyEvent.getCharacter().equals("a") || keyEvent.getCharacter().equals("A")) {
             if (availablemovement[1] != 0) {
                 hero.setX(hero.getX() - 64);
 

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Boss {
-    private boolean bossspawned = false;
+    public boolean bossspawned = false;
     ImageView boss = new ImageView();
     ImageView bosshealthbar = new ImageView();
     int bosshealth = 20;
@@ -98,6 +98,7 @@ public class Boss {
             boss.setFitWidth(128);
             boss.setFitHeight(128);
             boss.toFront();
+
 
             bosshealthbar.setImage(bhealthimg.get(20));
             bosshealthbar.setX(0);
