@@ -225,7 +225,7 @@ public class Controller {
     }
 
     private void burn(KeyEvent keyEvent, int selected) {
-        if (keyEvent.getCharacter().equals("q")) {
+        if (keyEvent.getCharacter().equals("q") || keyEvent.getCharacter().equals("Q")) {
             if (freeslots[selected - 1]) {
                 freeslots[selected - 1] = false;
                 slots.get(selected - 1).setImage(null);
@@ -362,7 +362,7 @@ public class Controller {
             chestopened = false;
         }
 
-        if (keyEvent.getCharacter().equals("x")) {
+        if (keyEvent.getCharacter().equals("x") || keyEvent.getCharacter().equals("X")) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
 
             Parent GO;
@@ -377,7 +377,7 @@ public class Controller {
             stage.show();
         }
 
-        if (keyEvent.getCharacter().equals("e")) {
+        if (keyEvent.getCharacter().equals("e") || keyEvent.getCharacter().equals("E")) {
             if (chest.getX() == hero.getX() && chest.getY() == hero.getY()) {
                 for (int i = 0; i < 9; i++) {
                     if (turn % 5 == 0 && !freeslots[i] && !potionslots[i] && roomclass.roomnr != 1) {
@@ -692,10 +692,10 @@ public class Controller {
                 charge = 0;
             }
         }
-        if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") ||
-                fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") ||
-                fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") ||
-                fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j")) {
+        if (fieldn.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("i") || keyEvent.getCharacter().equals("I") ||
+                fieldo.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("l") || keyEvent.getCharacter().equals("L")||
+                fields.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("k") || keyEvent.getCharacter().equals("K")||
+                fieldw.getImage().equals(attackableimg) && keyEvent.getCharacter().equals("j")|| keyEvent.getCharacter().equals("J")) {
             if (bossarmor == 0) {
                 if (freeslots[selected - 1] && bossclass.bosshealth != 0) {
                     bossclass.bosshealth--;
@@ -1175,7 +1175,7 @@ public class Controller {
     public void movement(int[] availablemovement, KeyEvent keyEvent) {
 
 
-        if (keyEvent.getCharacter().equals("w")) {
+        if (keyEvent.getCharacter().equals("w")|| keyEvent.getCharacter().equals("W")) {
             if (availablemovement[0] != 0) {
 
                 hero.setY(hero.getY() - 64);
@@ -1191,7 +1191,7 @@ public class Controller {
             }
 
         }
-        if (keyEvent.getCharacter().equals("a")) {
+        if (keyEvent.getCharacter().equals("a")|| keyEvent.getCharacter().equals("A")) {
             if (availablemovement[1] != 0) {
                 hero.setX(hero.getX() - 64);
 
@@ -1206,7 +1206,7 @@ public class Controller {
             }
 
         }
-        if (keyEvent.getCharacter().equals("s")) {
+        if (keyEvent.getCharacter().equals("s") || keyEvent.getCharacter().equals("S")) {
             if (availablemovement[2] != 0) {
                 hero.setY(hero.getY() + 64);
 
@@ -1219,7 +1219,7 @@ public class Controller {
                 }
             }
         }
-        if (keyEvent.getCharacter().equals("d")) {
+        if (keyEvent.getCharacter().equals("d") || keyEvent.getCharacter().equals("D")) {
             if (availablemovement[3] != 0) {
                 hero.setX(hero.getX() + 64);
 

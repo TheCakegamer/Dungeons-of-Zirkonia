@@ -63,6 +63,7 @@ public class Enemy {
 
         switch (keyEvent.getCharacter()) {
             case "j":
+            case "J":
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == (hero.getX() - 64) && enemy.getY() == hero.getY()) {
                         enemyhealth--;
@@ -70,6 +71,7 @@ public class Enemy {
                 }
                 break;
             case "k":
+            case "K":
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == hero.getX() && enemy.getY() == (hero.getY() + 64)) {
                         enemyhealth--;
@@ -79,6 +81,7 @@ public class Enemy {
 
                 break;
             case "i":
+            case "I":
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == hero.getX() && enemy.getY() == (hero.getY() - 64)) {
                         enemyhealth--;
@@ -87,6 +90,7 @@ public class Enemy {
                 }
                 break;
             case "l":
+            case "L":
                 if (freeslots[selected - 1]) {
                     if (enemy.getX() == (hero.getX() + 64) && enemy.getY() == hero.getY()) {
                         enemyhealth--;
